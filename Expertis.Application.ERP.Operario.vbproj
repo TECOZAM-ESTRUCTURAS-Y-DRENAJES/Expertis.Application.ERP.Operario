@@ -1,0 +1,360 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8E9010A-36D0-43B8-A01F-7C7C7B74BD80}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Expertis.Application.ERP.Operario</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Text</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Solmicro.Expertis.Application.ERP.Operario</RootNamespace>
+    <StartupObject>Solmicro.Expertis.Application.ERP.Operario.%28Ninguno%29</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccAuxPath>
+    </SccAuxPath>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>C:\ExpertisNet50R2test\Bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\..\..\..\..\..\..\ExpertisNet50R2test\Bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Expertis.Application.ERP.CommonClasses">
+      <Name>Expertis.Application.ERP.CommonClasses</Name>
+      <HintPath>..\..\..\Bin\Expertis.Application.ERP.CommonClasses.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Application.ERP.GDProgramas">
+      <Name>Expertis.Application.ERP.GDProgramas</Name>
+      <HintPath>..\..\..\Bin\Expertis.Application.ERP.GDProgramas.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Application.ERP.XCalendar">
+      <Name>Expertis.Application.ERP.XCalendar</Name>
+      <HintPath>..\..\..\Bin\Expertis.Application.ERP.XCalendar.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Business.BusinessEnum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Business.ClasesTecozam, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Expertis.Business.General, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Expertis.Business.Negocio">
+      <Name>Expertis.Business.Negocio</Name>
+      <HintPath>..\..\..\Bin\Expertis.Business.Negocio.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Engine.BE.BusinessEngine">
+      <Name>Expertis.Engine.BE.BusinessEngine</Name>
+      <HintPath>..\..\..\Bin\Expertis.Engine.BE.BusinessEngine.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Engine.DAL, Version=5.5.0.0, Culture=neutral, PublicKeyToken=f4e70a047dadc395" />
+    <Reference Include="Expertis.Engine.Global">
+      <Name>Expertis.Engine.Global</Name>
+      <HintPath>..\..\..\Bin\Expertis.Engine.Global.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Engine.UI.CommonClasses">
+      <Name>Expertis.Engine.UI.CommonClasses</Name>
+      <HintPath>..\..\..\Bin\Expertis.Engine.UI.CommonClasses.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Engine.UI.Resources">
+      <Name>Expertis.Engine.UI.Resources</Name>
+      <HintPath>..\..\..\Bin\Expertis.Engine.UI.Resources.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Engine.UI.WinControls">
+      <Name>Expertis.Engine.UI.WinControls</Name>
+      <HintPath>..\..\..\Bin\Expertis.Engine.UI.WinControls.dll</HintPath>
+      <AssemblyFolderKey>hklm\expertis.engine</AssemblyFolderKey>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Expertis.Tools.Common, Version=5.5.0.0, Culture=neutral, PublicKeyToken=f4e70a047dadc395" />
+    <Reference Include="Expertis.Tools.Designer, Version=5.5.0.0, Culture=neutral, PublicKeyToken=f4e70a047dadc395, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Janus.Windows.ButtonBar.v3, Version=3.5.109.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.CalendarCombo.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Janus.Windows.ExplorerBar.v3, Version=3.5.109.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.FilterEditor.v3, Version=3.5.109.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Janus.Windows.Schedule.v3, Version=3.5.109.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.TimeLine.v3, Version=3.5.109.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=21d5517571b185bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.9.0, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Solmicro.Expertis.Application.ERP.CommonClasses" />
+    <Import Include="Solmicro.Expertis.Business.BusinessEnum" />
+    <Import Include="Solmicro.Expertis.Business.General" />
+    <Import Include="Solmicro.Expertis.Business.Negocio" />
+    <Import Include="Solmicro.Expertis.Engine" />
+    <Import Include="Solmicro.Expertis.Engine.UI" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FormTest.Designer.vb">
+      <DependentUpon>FormTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalendarioOperario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopiaCalendarioOperario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDuplicar.Designer.vb">
+      <DependentUpon>FrmDuplicar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDuplicar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoricoHoraTasa.Designer.vb">
+      <DependentUpon>frmHistoricoHoraTasa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistoricoHoraTasa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeFecha.Designer.vb">
+      <DependentUpon>frmInformeFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformeFecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIntroducirCodigoISO.Designer.vb">
+      <DependentUpon>frmIntroducirCodigoISO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIntroducirCodigoISO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MntoGrupo.Designer.vb">
+      <DependentUpon>MntoGrupo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MntoGrupo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MntoOperario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="prueba.Designer.vb">
+      <DependentUpon>prueba.vb</DependentUpon>
+    </Compile>
+    <Compile Include="prueba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="FormTest.resx">
+      <DependentUpon>FormTest.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalendarioOperario.resx">
+      <DependentUpon>frmCalendarioOperario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopiaCalendarioOperario.resx">
+      <DependentUpon>FrmCopiaCalendarioOperario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDuplicar.resx">
+      <DependentUpon>FrmDuplicar.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoricoHoraTasa.resx">
+      <DependentUpon>frmHistoricoHoraTasa.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeFecha.resx">
+      <DependentUpon>frmInformeFecha.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIntroducirCodigoISO.resx">
+      <DependentUpon>frmIntroducirCodigoISO.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licenses.licx" />
+    <EmbeddedResource Include="MntoGrupo.resx">
+      <DependentUpon>MntoGrupo.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MntoOperario.resx">
+      <DependentUpon>MntoOperario.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="prueba.resx">
+      <DependentUpon>prueba.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

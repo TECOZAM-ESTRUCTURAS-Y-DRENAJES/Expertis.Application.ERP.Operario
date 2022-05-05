@@ -1,0 +1,38 @@
+C:\Builds\2\Producto\Expertis50R2_Release\bin\Release\Expertis.Application.ERP.Operario.dll
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\ResolveAssemblyReference.cache
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmCalendarioOperario.resources
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmCopiaCalendarioOperario.resources
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmHistoricoHoraTasa.resources
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoGrupo.resources
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoOperario.resources
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.vbproj.GenerateResource.Cache
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll.licenses
+C:\Builds\2\Producto\Expertis50R2_Release\src\Main\Source\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\ResolveAssemblyReference.cache
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmCalendarioOperario.resources
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmCopiaCalendarioOperario.resources
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmHistoricoHoraTasa.resources
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoGrupo.resources
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoOperario.resources
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.vbproj.GenerateResource.Cache
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll.licenses
+C:\Tecozam\Codigo Fuente\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll
+C:\Tecozam\Expertis.Application.ERP.Operario.dll
+Y:\Bin\Expertis.Application.ERP.Operario.dll
+C:\ExpertisNet50R2test\Bin\Expertis.Application.ERP.Operario.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\ExpertisNet50R2test\Bin\Expertis.Application.ERP.Operario.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\ResolveAssemblyReference.cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FormTest.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmCalendarioOperario.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmCopiaCalendarioOperario.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmDuplicar.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmHistoricoHoraTasa.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoGrupo.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoOperario.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.Resources.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.prueba.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.vbproj.GenerateResource.Cache
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll.licenses
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmInformeFecha.resources
+C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmIntroducirCodigoISO.resources
