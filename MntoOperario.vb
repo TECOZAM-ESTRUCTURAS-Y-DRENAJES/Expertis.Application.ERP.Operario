@@ -1773,6 +1773,24 @@ Public Class MntoOperario
 
     Protected Overridable Sub MntoOperario_Navigated(ByVal sender As Object, ByVal e As Engine.UI.NavigatedEventArgs) Handles MyBase.Navigated
         MostrarExternoProveedor()
+        'Saca Desc Obra Predeterminada
+        Try
+            Dim idobra As String
+            idobra = advObra_Predeterminada.Text
+
+            Dim filtro As New Filter
+            filtro.Add("IDObra", FilterOperator.Equal, idobra)
+
+            Dim dt As New DataTable
+            dt = New BE.DataEngine().Filter("tbObraCabecera", filtro)
+
+            Dim descObra As String
+            descObra = dt.Rows(0)("DescObra").ToString
+            ulObra.Text = descObra
+        Catch ex As Exception
+            ulObra.Text = ""
+        End Try
+        
     End Sub
 
     Protected Overridable Sub chkExterno_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkExterno.CheckedChanged
