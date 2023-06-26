@@ -1,3 +1,5 @@
+Imports Solmicro.Expertis.Business.ClasesTecozam
+
 Public Class MntoOperario
     Inherits Solmicro.Expertis.Engine.UI.SimpleMnto
 
@@ -159,14 +161,25 @@ Public Class MntoOperario
     Friend WithEvents cbxFechaNacimiento As Solmicro.Expertis.Engine.UI.CalendarBox
     Public WithEvents Label2 As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents btnGenIBAN As Solmicro.Expertis.Engine.UI.Button
+    Friend WithEvents bHistoricoProyecto As Solmicro.Expertis.Engine.UI.Button
+    Friend WithEvents GridHistoricoPersonal As Solmicro.Expertis.Engine.UI.Grid
+    Friend WithEvents txtDiccionario As Solmicro.Expertis.Engine.UI.TextBox
+    Friend WithEvents lblDiccionario As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents txtIDGET As Solmicro.Expertis.Engine.UI.TextBox
+    Friend WithEvents lblIDGET As Solmicro.Expertis.Engine.UI.Label
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim GridHistorico_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim GridHistoricoPersonal_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MntoOperario))
+        Dim GridHistorico_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim CmbTipoDocIdent_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim cbxUsuario_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.PicFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
+        Me.txtDiccionario = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblDiccionario = New Solmicro.Expertis.Engine.UI.Label
+        Me.GridHistoricoPersonal = New Solmicro.Expertis.Engine.UI.Grid
+        Me.bHistoricoProyecto = New Solmicro.Expertis.Engine.UI.Button
         Me.chbIncentivos = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.lblIncentivos = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbAnticipo_Fijo = New Solmicro.Expertis.Engine.UI.NumericTextBox
@@ -197,6 +210,8 @@ Public Class MntoOperario
         Me.ntbC_H_N = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblC_H_N = New Solmicro.Expertis.Engine.UI.Label
         Me.pnlFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
+        Me.txtIDGET = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblIDGET = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxFechaNacimiento = New Solmicro.Expertis.Engine.UI.CalendarBox
         Me.Label2 = New Solmicro.Expertis.Engine.UI.Label
         Me.chbPermisoGD = New Solmicro.Expertis.Engine.UI.CheckBox
@@ -303,6 +318,7 @@ Public Class MntoOperario
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.suspendlayout()
         Me.PicFichaOperario.suspendlayout()
+        CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFichaOperario.suspendlayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
@@ -325,10 +341,14 @@ Public Class MntoOperario
         'MainPanel
         '
         Me.MainPanel.Controls.Add(Me.PicFichaOperario)
-        Me.MainPanel.Size = New System.Drawing.Size(991, 763)
+        Me.MainPanel.Size = New System.Drawing.Size(991, 767)
         '
         'PicFichaOperario
         '
+        Me.PicFichaOperario.Controls.Add(Me.txtDiccionario)
+        Me.PicFichaOperario.Controls.Add(Me.lblDiccionario)
+        Me.PicFichaOperario.Controls.Add(Me.GridHistoricoPersonal)
+        Me.PicFichaOperario.Controls.Add(Me.bHistoricoProyecto)
         Me.PicFichaOperario.Controls.Add(Me.chbIncentivos)
         Me.PicFichaOperario.Controls.Add(Me.lblIncentivos)
         Me.PicFichaOperario.Controls.Add(Me.ntbAnticipo_Fijo)
@@ -362,8 +382,51 @@ Public Class MntoOperario
         Me.PicFichaOperario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PicFichaOperario.Location = New System.Drawing.Point(0, 0)
         Me.PicFichaOperario.Name = "PicFichaOperario"
-        Me.PicFichaOperario.Size = New System.Drawing.Size(991, 763)
+        Me.PicFichaOperario.Size = New System.Drawing.Size(991, 767)
         Me.PicFichaOperario.TabIndex = 1
+        '
+        'txtDiccionario
+        '
+        Me.TryDataBinding(txtDiccionario, New System.Windows.Forms.Binding("Text", Me, "Diccionario", True))
+        Me.txtDiccionario.DisabledBackColor = System.Drawing.Color.White
+        Me.txtDiccionario.Location = New System.Drawing.Point(802, 743)
+        Me.txtDiccionario.Name = "txtDiccionario"
+        Me.txtDiccionario.Size = New System.Drawing.Size(176, 21)
+        Me.txtDiccionario.TabIndex = 34
+        '
+        'lblDiccionario
+        '
+        Me.lblDiccionario.Location = New System.Drawing.Point(693, 747)
+        Me.lblDiccionario.Name = "lblDiccionario"
+        Me.lblDiccionario.Size = New System.Drawing.Size(70, 13)
+        Me.lblDiccionario.TabIndex = 35
+        Me.lblDiccionario.Text = "Diccionario"
+        '
+        'GridHistoricoPersonal
+        '
+        Me.GridHistoricoPersonal.AllowAddNew = Janus.Windows.GridEX.InheritableBoolean.[False]
+        Me.GridHistoricoPersonal.ColumnAutoResize = True
+        GridHistoricoPersonal_DesignTimeLayout.LayoutString = resources.GetString("GridHistoricoPersonal_DesignTimeLayout.LayoutString")
+        Me.GridHistoricoPersonal.DesignTimeLayout = GridHistoricoPersonal_DesignTimeLayout
+        Me.GridHistoricoPersonal.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
+        Me.GridHistoricoPersonal.EntityName = "HistoricoPersonal"
+        Me.GridHistoricoPersonal.KeyField = "IDOperario"
+        Me.GridHistoricoPersonal.Location = New System.Drawing.Point(369, 661)
+        Me.GridHistoricoPersonal.Name = "GridHistoricoPersonal"
+        Me.GridHistoricoPersonal.PrimaryDataFields = "IDOperario"
+        Me.GridHistoricoPersonal.SecondaryDataFields = "IDOperario"
+        Me.GridHistoricoPersonal.Size = New System.Drawing.Size(250, 76)
+        Me.GridHistoricoPersonal.TabIndex = 33
+        Me.GridHistoricoPersonal.ViewName = "tbHistoricoPersonal"
+        Me.GridHistoricoPersonal.Visible = False
+        '
+        'bHistoricoProyecto
+        '
+        Me.bHistoricoProyecto.Location = New System.Drawing.Point(21, 737)
+        Me.bHistoricoProyecto.Name = "bHistoricoProyecto"
+        Me.bHistoricoProyecto.Size = New System.Drawing.Size(171, 23)
+        Me.bHistoricoProyecto.TabIndex = 32
+        Me.bHistoricoProyecto.Text = "Historico Proyecto"
         '
         'chbIncentivos
         '
@@ -613,6 +676,8 @@ Public Class MntoOperario
         '
         'pnlFichaOperario
         '
+        Me.pnlFichaOperario.Controls.Add(Me.txtIDGET)
+        Me.pnlFichaOperario.Controls.Add(Me.lblIDGET)
         Me.pnlFichaOperario.Controls.Add(Me.cbxFechaNacimiento)
         Me.pnlFichaOperario.Controls.Add(Me.Label2)
         Me.pnlFichaOperario.Controls.Add(Me.chbPermisoGD)
@@ -666,21 +731,38 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFichaOperario.Location = New System.Drawing.Point(0, 0)
         Me.pnlFichaOperario.Name = "pnlFichaOperario"
-        Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 597)
+        Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 593)
         Me.pnlFichaOperario.TabIndex = 0
+        '
+        'txtIDGET
+        '
+        Me.TryDataBinding(txtIDGET, New System.Windows.Forms.Binding("Text", Me, "IDGET", True))
+        Me.txtIDGET.DisabledBackColor = System.Drawing.Color.White
+        Me.txtIDGET.Location = New System.Drawing.Point(860, 28)
+        Me.txtIDGET.Name = "txtIDGET"
+        Me.txtIDGET.Size = New System.Drawing.Size(120, 21)
+        Me.txtIDGET.TabIndex = 142
+        '
+        'lblIDGET
+        '
+        Me.lblIDGET.Location = New System.Drawing.Point(784, 32)
+        Me.lblIDGET.Name = "lblIDGET"
+        Me.lblIDGET.Size = New System.Drawing.Size(44, 13)
+        Me.lblIDGET.TabIndex = 143
+        Me.lblIDGET.Text = "IDGET"
         '
         'cbxFechaNacimiento
         '
         Me.TryDataBinding(cbxFechaNacimiento, New System.Windows.Forms.Binding("BindableValue", Me, "Fecha_Nacimiento", True))
         Me.cbxFechaNacimiento.DisabledBackColor = System.Drawing.Color.White
-        Me.cbxFechaNacimiento.Location = New System.Drawing.Point(720, 28)
+        Me.cbxFechaNacimiento.Location = New System.Drawing.Point(671, 28)
         Me.cbxFechaNacimiento.Name = "cbxFechaNacimiento"
-        Me.cbxFechaNacimiento.Size = New System.Drawing.Size(103, 21)
+        Me.cbxFechaNacimiento.Size = New System.Drawing.Size(107, 21)
         Me.cbxFechaNacimiento.TabIndex = 141
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(607, 32)
+        Me.Label2.Location = New System.Drawing.Point(562, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 140
@@ -1654,7 +1736,7 @@ Public Class MntoOperario
         'MntoOperario
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 14)
-        Me.ClientSize = New System.Drawing.Size(999, 836)
+        Me.ClientSize = New System.Drawing.Size(999, 840)
         Me.EntityName = "Operario"
         Me.Name = "MntoOperario"
         Me.NavigationFields = "NOperarioOrden"
@@ -1666,6 +1748,7 @@ Public Class MntoOperario
         Me.MainPanel.ResumeLayout(False)
         Me.PicFichaOperario.ResumeLayout(False)
         Me.PicFichaOperario.PerformLayout()
+        CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFichaOperario.ResumeLayout(False)
         Me.pnlFichaOperario.PerformLayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1790,7 +1873,7 @@ Public Class MntoOperario
         Catch ex As Exception
             ulObra.Text = ""
         End Try
-        
+
     End Sub
 
     Protected Overridable Sub chkExterno_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkExterno.CheckedChanged
@@ -2099,4 +2182,131 @@ Public Class MntoOperario
         Return Num
     End Function
 
+    Private Sub bHistoricoProyecto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bHistoricoProyecto.Click
+        Try
+            If GridHistoricoPersonal.Visible = True Then
+                GridHistoricoPersonal.Visible = False
+            Else
+                GridHistoricoPersonal.Visible = True
+            End If
+        Catch ex As Exception
+        End Try
+
+    End Sub
+
+    Public Function devuelveNObra(ByVal IDObra As String) As String
+        Dim f As New Filter
+        f.Add("IDObra", FilterOperator.Equal, IDObra)
+        Dim dt As New DataTable
+
+        dt = New BE.DataEngine().Filter("tbObraCabecera", f)
+        Return dt.Rows(0)("NObra")
+    End Function
+
+    Public Function devuelveUltimaObra() As String
+        Dim f As New Filter
+        f.Add("IDOperario", FilterOperator.Equal, CurrentRow("IDOperario"))
+        Dim dt As New DataTable
+        dt = New BE.DataEngine().Filter("tbHistoricoPersonal", f, , "Fecha desc")
+
+        Return dt.Rows(0)("Proyecto")
+    End Function
+    Public Sub AñadeLineaHistorico(ByVal NObra As String)
+        Dim LineaH As New HistoricoPersonal
+        Dim dtLineaH As DataTable = LineaH.AddNewForm
+        'dtLineaH.Rows(0)("IDLinea") = 3
+        dtLineaH.Rows(0)("Fecha") = Today
+        dtLineaH.Rows(0)("IDOperario") = CurrentRow("IDOperario")
+        dtLineaH.Rows(0)("Proyecto") = NObra
+
+        LineaH.Update(dtLineaH)
+    End Sub
+
+    Private Sub cbxFechaAlta_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbxFechaAlta.Leave
+
+        If Len(txtIDGET.Text) = 0 Then
+            Dim IDGET As String = GetIDGET()
+            setIDGET()
+            txtIDGET.Text = IDGET
+        End If
+        
+    End Sub
+
+    Public Function GetIDGET() As String
+        Dim f As New Filter
+        f.Add("IDContador", FilterOperator.Equal, "IDGET")
+        Dim dt As New DataTable
+        dt = New BE.DataEngine().Filter("xTecozam50R2..tbMaestroContador", f)
+
+        Dim texto As String
+        texto = dt.Rows(0)("Texto")
+
+        Dim numerico As String
+        numerico = dt.Rows(0)("Contador")
+
+        If Len(numerico) = 1 Then
+            texto = texto & "0000" & numerico
+        ElseIf Len(numerico) = 2 Then
+            texto = texto & "000" & numerico
+        ElseIf Len(numerico) = 3 Then
+            texto = texto & "00" & numerico
+        ElseIf Len(numerico) = 4 Then
+            texto = texto & "0" & numerico
+        Else
+            texto = texto
+        End If
+
+        Return texto
+
+    End Function
+
+    Public Sub setIDGET()
+        Dim f As New Filter
+        f.Add("IDContador", FilterOperator.Equal, "IDGET")
+        Dim dt As New DataTable
+        dt = New BE.DataEngine().Filter("xTecozam50R2..tbMaestroContador", f)
+
+        Dim texto As String
+        texto = dt.Rows(0)("Texto")
+
+        Dim numerico As Integer
+        numerico = dt.Rows(0)("Contador")
+
+        numerico = numerico + 1
+
+        Dim sql As String
+        sql = "UPDATE xTecozam50R2..tbMaestroContador set Contador= " & numerico & " Where IDContador='IDGET'"
+
+        Dim aux As New Business.ClasesTecozam.MetodosAuxiliares
+        aux.EjecutarSql(sql)
+
+    End Sub
+
+    Private Sub advObra_Predeterminada_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles advObra_Predeterminada.Enter
+        Dim IDObra As String = ""
+        IDObra = advObra_Predeterminada.Text
+        If Len(IDObra) > 0 Then
+            
+            'Dim nObra As String
+            'nObra = devuelveNObra(advObra_Predeterminada.Text)
+            Try
+                If IDObra = devuelveUltimaObra() Then
+                    'MsgBox("Es misma obra, no se añade nada.")
+                Else
+                    'MsgBox("Se añade obra")
+                    Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
+                    If result = DialogResult.Yes Then
+                        AñadeLineaHistorico(IDObra)
+                    End If
+                End If
+            Catch ex As Exception
+                Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
+                If result = DialogResult.Yes Then
+                    AñadeLineaHistorico(IDObra)
+                End If
+            End Try
+            Me.UpdateData()
+        End If
+
+    End Sub
 End Class
