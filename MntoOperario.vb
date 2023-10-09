@@ -1,4 +1,5 @@
 Imports Solmicro.Expertis.Business.ClasesTecozam
+Imports Solmicro.Expertis.Engine.DAL
 
 Public Class MntoOperario
     Inherits Solmicro.Expertis.Engine.UI.SimpleMnto
@@ -167,6 +168,10 @@ Public Class MntoOperario
     Friend WithEvents lblDiccionario As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents txtIDGET As Solmicro.Expertis.Engine.UI.TextBox
     Friend WithEvents lblIDGET As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents lblsortcode As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents txtaccountNumber As Solmicro.Expertis.Engine.UI.TextBox
+    Friend WithEvents lblaccountNumber As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents txtsortcode As Solmicro.Expertis.Engine.UI.TextBox
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -313,6 +318,10 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.lblsortcode = New Solmicro.Expertis.Engine.UI.Label
+        Me.txtsortcode = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.txtaccountNumber = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblaccountNumber = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -794,7 +803,7 @@ Public Class MntoOperario
         Me.GridHistorico.EntityName = "OperarioHistorico"
         Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(68, 117)
+        Me.GridHistorico.Location = New System.Drawing.Point(465, 57)
         Me.GridHistorico.Name = "GridHistorico"
         Me.GridHistorico.PrimaryDataFields = "IDOperario"
         Me.GridHistorico.SecondaryDataFields = "IdOperario"
@@ -1338,6 +1347,10 @@ Public Class MntoOperario
         '
         'FraCondEco
         '
+        Me.FraCondEco.Controls.Add(Me.txtaccountNumber)
+        Me.FraCondEco.Controls.Add(Me.lblaccountNumber)
+        Me.FraCondEco.Controls.Add(Me.txtsortcode)
+        Me.FraCondEco.Controls.Add(Me.lblsortcode)
         Me.FraCondEco.Controls.Add(Me.btnGenIBAN)
         Me.FraCondEco.Controls.Add(Me.lblSwift)
         Me.FraCondEco.Controls.Add(Me.txtSwift)
@@ -1364,9 +1377,9 @@ Public Class MntoOperario
         '
         'btnGenIBAN
         '
-        Me.btnGenIBAN.Location = New System.Drawing.Point(402, 119)
+        Me.btnGenIBAN.Location = New System.Drawing.Point(428, 119)
         Me.btnGenIBAN.Name = "btnGenIBAN"
-        Me.btnGenIBAN.Size = New System.Drawing.Size(115, 24)
+        Me.btnGenIBAN.Size = New System.Drawing.Size(89, 24)
         Me.btnGenIBAN.TabIndex = 43
         Me.btnGenIBAN.Text = "Calcular IBAN"
         '
@@ -1427,7 +1440,7 @@ Public Class MntoOperario
         '
         'lblDigitoControl
         '
-        Me.lblDigitoControl.Location = New System.Drawing.Point(198, 96)
+        Me.lblDigitoControl.Location = New System.Drawing.Point(190, 96)
         Me.lblDigitoControl.Name = "lblDigitoControl"
         Me.lblDigitoControl.Size = New System.Drawing.Size(33, 13)
         Me.lblDigitoControl.TabIndex = 27
@@ -1438,10 +1451,10 @@ Public Class MntoOperario
         '
         Me.TryDataBinding(txtDigitoControl, New System.Windows.Forms.Binding("Text", Me, "DigitoControl", True))
         Me.txtDigitoControl.DisabledBackColor = System.Drawing.Color.White
-        Me.txtDigitoControl.Location = New System.Drawing.Point(237, 92)
+        Me.txtDigitoControl.Location = New System.Drawing.Point(229, 92)
         Me.txtDigitoControl.MaxLength = 2
         Me.txtDigitoControl.Name = "txtDigitoControl"
-        Me.txtDigitoControl.Size = New System.Drawing.Size(48, 21)
+        Me.txtDigitoControl.Size = New System.Drawing.Size(58, 21)
         Me.txtDigitoControl.TabIndex = 5
         '
         'lblNCuenta
@@ -1733,6 +1746,44 @@ Public Class MntoOperario
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
         '
+        'lblsortcode
+        '
+        Me.lblsortcode.Location = New System.Drawing.Point(7, 119)
+        Me.lblsortcode.Name = "lblsortcode"
+        Me.lblsortcode.Size = New System.Drawing.Size(58, 13)
+        Me.lblsortcode.TabIndex = 44
+        Me.lblsortcode.Text = "Sortcode"
+        Me.lblsortcode.Visible = False
+        '
+        'txtsortcode
+        '
+        Me.TryDataBinding(txtsortcode, New System.Windows.Forms.Binding("Text", Me, "sortcode", True))
+        Me.txtsortcode.DisabledBackColor = System.Drawing.Color.White
+        Me.txtsortcode.Location = New System.Drawing.Point(88, 119)
+        Me.txtsortcode.Name = "txtsortcode"
+        Me.txtsortcode.Size = New System.Drawing.Size(96, 21)
+        Me.txtsortcode.TabIndex = 46
+        Me.txtsortcode.Visible = False
+        '
+        'txtaccountNumber
+        '
+        Me.TryDataBinding(txtaccountNumber, New System.Windows.Forms.Binding("Text", Me, "accountNumber", True))
+        Me.txtaccountNumber.DisabledBackColor = System.Drawing.Color.White
+        Me.txtaccountNumber.Location = New System.Drawing.Point(287, 120)
+        Me.txtaccountNumber.Name = "txtaccountNumber"
+        Me.txtaccountNumber.Size = New System.Drawing.Size(121, 21)
+        Me.txtaccountNumber.TabIndex = 47
+        Me.txtaccountNumber.Visible = False
+        '
+        'lblaccountNumber
+        '
+        Me.lblaccountNumber.Location = New System.Drawing.Point(190, 123)
+        Me.lblaccountNumber.Name = "lblaccountNumber"
+        Me.lblaccountNumber.Size = New System.Drawing.Size(97, 13)
+        Me.lblaccountNumber.TabIndex = 48
+        Me.lblaccountNumber.Text = "AccountNumber"
+        Me.lblaccountNumber.Visible = False
+        '
         'MntoOperario
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 14)
@@ -1783,6 +1834,12 @@ Public Class MntoOperario
             LoadGridActions()
             Dim o As New Business.General.Operario
             cbxUsuario.DataSource = o.DevuelveUsuariosBD()
+            If ExpertisApp.DataBaseName.ToUpper = "XTECOZAMUNITEDKINGDOM50R2" Then
+                txtsortcode.Visible = True
+                txtaccountNumber.Visible = True
+                lblsortcode.Visible = True
+                lblaccountNumber.Visible = True
+            End If
         End If
     End Sub
 
@@ -2229,7 +2286,7 @@ Public Class MntoOperario
             setIDGET()
             txtIDGET.Text = IDGET
         End If
-        
+
     End Sub
 
     Public Function GetIDGET() As String
@@ -2286,7 +2343,7 @@ Public Class MntoOperario
         Dim IDObra As String = ""
         IDObra = advObra_Predeterminada.Text
         If Len(IDObra) > 0 Then
-            
+
             'Dim nObra As String
             'nObra = devuelveNObra(advObra_Predeterminada.Text)
             Try
