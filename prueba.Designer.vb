@@ -35,7 +35,7 @@ Partial Class prueba
         '
         'MainPanel
         '
-        Me.MainPanel.Size = New System.Drawing.Size(496, 155)
+        Me.MainPanel.Size = New System.Drawing.Size(496, 181)
         '
         'prueba
         '

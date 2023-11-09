@@ -172,6 +172,8 @@ Public Class MntoOperario
     Friend WithEvents txtaccountNumber As Solmicro.Expertis.Engine.UI.TextBox
     Friend WithEvents lblaccountNumber As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents txtsortcode As Solmicro.Expertis.Engine.UI.TextBox
+    Friend WithEvents ntbJornadaParcial As Solmicro.Expertis.Engine.UI.NumericTextBox
+    Friend WithEvents lblJornadaParcial As Solmicro.Expertis.Engine.UI.Label
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -279,6 +281,10 @@ Public Class MntoOperario
         Me.txtNombre = New Solmicro.Expertis.Engine.UI.TextBox
         Me.lblCategoria = New Solmicro.Expertis.Engine.UI.Label
         Me.FraCondEco = New Solmicro.Expertis.Engine.UI.Frame
+        Me.txtaccountNumber = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblaccountNumber = New Solmicro.Expertis.Engine.UI.Label
+        Me.txtsortcode = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.lblsortcode = New Solmicro.Expertis.Engine.UI.Label
         Me.btnGenIBAN = New Solmicro.Expertis.Engine.UI.Button
         Me.lblSwift = New Solmicro.Expertis.Engine.UI.Label
         Me.txtSwift = New Solmicro.Expertis.Engine.UI.TextBox
@@ -318,10 +324,8 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.lblsortcode = New Solmicro.Expertis.Engine.UI.Label
-        Me.txtsortcode = New Solmicro.Expertis.Engine.UI.TextBox
-        Me.txtaccountNumber = New Solmicro.Expertis.Engine.UI.TextBox
-        Me.lblaccountNumber = New Solmicro.Expertis.Engine.UI.Label
+        Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
+        Me.lblJornadaParcial = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -685,6 +689,8 @@ Public Class MntoOperario
         '
         'pnlFichaOperario
         '
+        Me.pnlFichaOperario.Controls.Add(Me.ntbJornadaParcial)
+        Me.pnlFichaOperario.Controls.Add(Me.lblJornadaParcial)
         Me.pnlFichaOperario.Controls.Add(Me.txtIDGET)
         Me.pnlFichaOperario.Controls.Add(Me.lblIDGET)
         Me.pnlFichaOperario.Controls.Add(Me.cbxFechaNacimiento)
@@ -1375,6 +1381,44 @@ Public Class MntoOperario
         Me.FraCondEco.TabStop = False
         Me.FraCondEco.Text = "Condiciones Econonómicas"
         '
+        'txtaccountNumber
+        '
+        Me.TryDataBinding(txtaccountNumber, New System.Windows.Forms.Binding("Text", Me, "accountNumber", True))
+        Me.txtaccountNumber.DisabledBackColor = System.Drawing.Color.White
+        Me.txtaccountNumber.Location = New System.Drawing.Point(287, 120)
+        Me.txtaccountNumber.Name = "txtaccountNumber"
+        Me.txtaccountNumber.Size = New System.Drawing.Size(121, 21)
+        Me.txtaccountNumber.TabIndex = 47
+        Me.txtaccountNumber.Visible = False
+        '
+        'lblaccountNumber
+        '
+        Me.lblaccountNumber.Location = New System.Drawing.Point(190, 123)
+        Me.lblaccountNumber.Name = "lblaccountNumber"
+        Me.lblaccountNumber.Size = New System.Drawing.Size(97, 13)
+        Me.lblaccountNumber.TabIndex = 48
+        Me.lblaccountNumber.Text = "AccountNumber"
+        Me.lblaccountNumber.Visible = False
+        '
+        'txtsortcode
+        '
+        Me.TryDataBinding(txtsortcode, New System.Windows.Forms.Binding("Text", Me, "sortcode", True))
+        Me.txtsortcode.DisabledBackColor = System.Drawing.Color.White
+        Me.txtsortcode.Location = New System.Drawing.Point(88, 119)
+        Me.txtsortcode.Name = "txtsortcode"
+        Me.txtsortcode.Size = New System.Drawing.Size(96, 21)
+        Me.txtsortcode.TabIndex = 46
+        Me.txtsortcode.Visible = False
+        '
+        'lblsortcode
+        '
+        Me.lblsortcode.Location = New System.Drawing.Point(7, 119)
+        Me.lblsortcode.Name = "lblsortcode"
+        Me.lblsortcode.Size = New System.Drawing.Size(58, 13)
+        Me.lblsortcode.TabIndex = 44
+        Me.lblsortcode.Text = "Sortcode"
+        Me.lblsortcode.Visible = False
+        '
         'btnGenIBAN
         '
         Me.btnGenIBAN.Location = New System.Drawing.Point(428, 119)
@@ -1746,43 +1790,22 @@ Public Class MntoOperario
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
         '
-        'lblsortcode
+        'ntbJornadaParcial
         '
-        Me.lblsortcode.Location = New System.Drawing.Point(7, 119)
-        Me.lblsortcode.Name = "lblsortcode"
-        Me.lblsortcode.Size = New System.Drawing.Size(58, 13)
-        Me.lblsortcode.TabIndex = 44
-        Me.lblsortcode.Text = "Sortcode"
-        Me.lblsortcode.Visible = False
+        Me.TryDataBinding(ntbJornadaParcial, New System.Windows.Forms.Binding("Value", Me, "JornadaParcial", True))
+        Me.ntbJornadaParcial.DisabledBackColor = System.Drawing.Color.White
+        Me.ntbJornadaParcial.Location = New System.Drawing.Point(401, 404)
+        Me.ntbJornadaParcial.Name = "ntbJornadaParcial"
+        Me.ntbJornadaParcial.Size = New System.Drawing.Size(121, 21)
+        Me.ntbJornadaParcial.TabIndex = 144
         '
-        'txtsortcode
+        'lblJornadaParcial
         '
-        Me.TryDataBinding(txtsortcode, New System.Windows.Forms.Binding("Text", Me, "sortcode", True))
-        Me.txtsortcode.DisabledBackColor = System.Drawing.Color.White
-        Me.txtsortcode.Location = New System.Drawing.Point(88, 119)
-        Me.txtsortcode.Name = "txtsortcode"
-        Me.txtsortcode.Size = New System.Drawing.Size(96, 21)
-        Me.txtsortcode.TabIndex = 46
-        Me.txtsortcode.Visible = False
-        '
-        'txtaccountNumber
-        '
-        Me.TryDataBinding(txtaccountNumber, New System.Windows.Forms.Binding("Text", Me, "accountNumber", True))
-        Me.txtaccountNumber.DisabledBackColor = System.Drawing.Color.White
-        Me.txtaccountNumber.Location = New System.Drawing.Point(287, 120)
-        Me.txtaccountNumber.Name = "txtaccountNumber"
-        Me.txtaccountNumber.Size = New System.Drawing.Size(121, 21)
-        Me.txtaccountNumber.TabIndex = 47
-        Me.txtaccountNumber.Visible = False
-        '
-        'lblaccountNumber
-        '
-        Me.lblaccountNumber.Location = New System.Drawing.Point(190, 123)
-        Me.lblaccountNumber.Name = "lblaccountNumber"
-        Me.lblaccountNumber.Size = New System.Drawing.Size(97, 13)
-        Me.lblaccountNumber.TabIndex = 48
-        Me.lblaccountNumber.Text = "AccountNumber"
-        Me.lblaccountNumber.Visible = False
+        Me.lblJornadaParcial.Location = New System.Drawing.Point(305, 405)
+        Me.lblJornadaParcial.Name = "lblJornadaParcial"
+        Me.lblJornadaParcial.Size = New System.Drawing.Size(90, 13)
+        Me.lblJornadaParcial.TabIndex = 145
+        Me.lblJornadaParcial.Text = "JornadaParcial"
         '
         'MntoOperario
         '
