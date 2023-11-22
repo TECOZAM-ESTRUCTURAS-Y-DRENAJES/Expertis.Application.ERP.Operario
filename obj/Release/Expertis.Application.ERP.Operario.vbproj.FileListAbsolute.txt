@@ -36,3 +36,18 @@ C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Ex
 C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll
 C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmInformeFecha.resources
 C:\Users\lgonzalez\Desktop\EXPERTIS\DESARROLLO EXPERTIS\FR2Sergio\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmIntroducirCodigoISO.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\ResolveAssemblyReference.cache
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FormTest.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmCalendarioOperario.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmCopiaCalendarioOperario.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.FrmDuplicar.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmHistoricoHoraTasa.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmInformeFecha.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.frmIntroducirCodigoISO.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoGrupo.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoOperario.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.Resources.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.prueba.resources
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.vbproj.GenerateResource.Cache
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll.licenses
+C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll

@@ -217,6 +217,8 @@ Public Class MntoOperario
         Me.ntbC_H_N = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblC_H_N = New Solmicro.Expertis.Engine.UI.Label
         Me.pnlFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
+        Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
+        Me.lblJornadaParcial = New Solmicro.Expertis.Engine.UI.Label
         Me.txtIDGET = New Solmicro.Expertis.Engine.UI.TextBox
         Me.lblIDGET = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxFechaNacimiento = New Solmicro.Expertis.Engine.UI.CalendarBox
@@ -324,8 +326,6 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
-        Me.lblJornadaParcial = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -749,6 +749,23 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 593)
         Me.pnlFichaOperario.TabIndex = 0
         '
+        'ntbJornadaParcial
+        '
+        Me.TryDataBinding(ntbJornadaParcial, New System.Windows.Forms.Binding("Value", Me, "JornadaParcial", True))
+        Me.ntbJornadaParcial.DisabledBackColor = System.Drawing.Color.White
+        Me.ntbJornadaParcial.Location = New System.Drawing.Point(401, 404)
+        Me.ntbJornadaParcial.Name = "ntbJornadaParcial"
+        Me.ntbJornadaParcial.Size = New System.Drawing.Size(121, 21)
+        Me.ntbJornadaParcial.TabIndex = 144
+        '
+        'lblJornadaParcial
+        '
+        Me.lblJornadaParcial.Location = New System.Drawing.Point(305, 405)
+        Me.lblJornadaParcial.Name = "lblJornadaParcial"
+        Me.lblJornadaParcial.Size = New System.Drawing.Size(90, 13)
+        Me.lblJornadaParcial.TabIndex = 145
+        Me.lblJornadaParcial.Text = "JornadaParcial"
+        '
         'txtIDGET
         '
         Me.TryDataBinding(txtIDGET, New System.Windows.Forms.Binding("Text", Me, "IDGET", True))
@@ -809,7 +826,7 @@ Public Class MntoOperario
         Me.GridHistorico.EntityName = "OperarioHistorico"
         Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(465, 57)
+        Me.GridHistorico.Location = New System.Drawing.Point(529, 57)
         Me.GridHistorico.Name = "GridHistorico"
         Me.GridHistorico.PrimaryDataFields = "IDOperario"
         Me.GridHistorico.SecondaryDataFields = "IdOperario"
@@ -1790,23 +1807,6 @@ Public Class MntoOperario
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
         '
-        'ntbJornadaParcial
-        '
-        Me.TryDataBinding(ntbJornadaParcial, New System.Windows.Forms.Binding("Value", Me, "JornadaParcial", True))
-        Me.ntbJornadaParcial.DisabledBackColor = System.Drawing.Color.White
-        Me.ntbJornadaParcial.Location = New System.Drawing.Point(401, 404)
-        Me.ntbJornadaParcial.Name = "ntbJornadaParcial"
-        Me.ntbJornadaParcial.Size = New System.Drawing.Size(121, 21)
-        Me.ntbJornadaParcial.TabIndex = 144
-        '
-        'lblJornadaParcial
-        '
-        Me.lblJornadaParcial.Location = New System.Drawing.Point(305, 405)
-        Me.lblJornadaParcial.Name = "lblJornadaParcial"
-        Me.lblJornadaParcial.Size = New System.Drawing.Size(90, 13)
-        Me.lblJornadaParcial.TabIndex = 145
-        Me.lblJornadaParcial.Text = "JornadaParcial"
-        '
         'MntoOperario
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 14)
@@ -2388,5 +2388,175 @@ Public Class MntoOperario
             Me.UpdateData()
         End If
 
+    End Sub
+
+    Private Sub advIdOficio_SetPredefinedFilter(ByVal sender As System.Object, ByVal e As Solmicro.Expertis.Engine.UI.AdvSearchFilterEventArgs) Handles advIdOficio.SetPredefinedFilter
+        If ExpertisApp.DataBaseName = "xTecozam50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                    f.Add(New StringFilterItem("IDOficio", "J. Prod"))
+                ElseIf AdvIDCategoria.Text = 2 Then
+                    f.Add(New StringFilterItem("IDOficio", "Capataz"))
+                    f.Add(New StringFilterItem("IDOficio", "Encargado"))
+                ElseIf AdvIDCategoria.Text = 3 Then
+                    f.Add(New StringFilterItem("IDOficio", "Encofrador"))
+                    f.Add(New StringFilterItem("IDOficio", "Ferrallist"))
+                    f.Add(New StringFilterItem("IDOficio", "Op.Almacen"))
+                    f.Add(New StringFilterItem("IDOficio", "Sold. Of 2"))
+                ElseIf AdvIDCategoria.Text = 4 Then
+                    f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
+                ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "AUXILIARES"))
+                    f.Add(New StringFilterItem("IDOficio", "Calidad"))
+                    f.Add(New StringFilterItem("IDOficio", "COMPRAS"))
+                    f.Add(New StringFilterItem("IDOficio", "CONTABILID"))
+                    f.Add(New StringFilterItem("IDOficio", "CONTRATA"))
+                    f.Add(New StringFilterItem("IDOficio", "COSTES"))
+                    f.Add(New StringFilterItem("IDOficio", "DELEGADO"))
+                    f.Add(New StringFilterItem("IDOficio", "DIRECCION"))
+                    f.Add(New StringFilterItem("IDOficio", "Documentac"))
+                    f.Add(New StringFilterItem("IDOficio", "Prevencion"))
+                    f.Add(New StringFilterItem("IDOficio", "RRHH"))
+                    f.Add(New StringFilterItem("IDOficio", "ADMINOBRA"))
+                    f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
+                    f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
+                End If
+            End If         
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xFerrallas50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                ElseIf AdvIDCategoria.Text = 2 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
+                ElseIf AdvIDCategoria.Text = 3 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENC OF 1ª"))
+                    f.Add(New StringFilterItem("IDOficio", "FER OF 1º"))
+                    f.Add(New StringFilterItem("IDOficio", "FER OF 2º"))
+                    f.Add(New StringFilterItem("IDOficio", "GRUISTA"))
+                ElseIf AdvIDCategoria.Text = 4 Then
+                ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "COND"))
+                    f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
+                    f.Add(New StringFilterItem("IDOficio", "JEFETALLER"))
+                    f.Add(New StringFilterItem("IDOficio", "LIMP"))
+                    f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
+                    f.Add(New StringFilterItem("IDOficio", "RECEPCION"))
+                    f.Add(New StringFilterItem("IDOficio", "TECDES"))
+                    f.Add(New StringFilterItem("IDOficio", "TECPROY"))
+                End If
+            End If
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xSecozam50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                ElseIf AdvIDCategoria.Text = 2 Then
+                ElseIf AdvIDCategoria.Text = 3 Then
+                ElseIf AdvIDCategoria.Text = 4 Then
+                ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "ADMINISTRA"))
+                    f.Add(New StringFilterItem("IDOficio", "DELINEANTE"))
+                    f.Add(New StringFilterItem("IDOficio", "ENCOFRADOS"))
+                    f.Add(New StringFilterItem("IDOficio", "JEFEOT"))
+                    f.Add(New StringFilterItem("IDOficio", "MARCOTEC"))
+                    f.Add(New StringFilterItem("IDOficio", "TECCOSTES"))
+                    f.Add(New StringFilterItem("IDOficio", "TECPROY"))
+                End If
+            End If
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xTecozamUnitedKingdom50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                ElseIf AdvIDCategoria.Text = 2 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
+                ElseIf AdvIDCategoria.Text = 3 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENC"))
+                ElseIf AdvIDCategoria.Text = 4 Then
+                    f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
+                ElseIf AdvIDCategoria.Text = 5 Then
+                End If
+            End If
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xTecozamNorge50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                ElseIf AdvIDCategoria.Text = 2 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
+                ElseIf AdvIDCategoria.Text = 3 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENC"))
+                ElseIf AdvIDCategoria.Text = 4 Then
+                    f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
+                ElseIf AdvIDCategoria.Text = 5 Then
+                End If
+            End If
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xDrenajesPortugal50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            If Len(AdvIDCategoria.Text) <> 0 Then
+                If AdvIDCategoria.Text = 1 Then
+                ElseIf AdvIDCategoria.Text = 2 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
+                ElseIf AdvIDCategoria.Text = 3 Then
+                    f.Add(New StringFilterItem("IDOficio", "ENC"))
+                ElseIf AdvIDCategoria.Text = 4 Then
+                    f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
+                ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "ADMINISTRA"))
+                    f.Add(New StringFilterItem("IDOficio", "TECPROY"))
+                End If
+            End If
+            e.Filter.Add(f)
+        End If
+    End Sub
+
+    Private Sub AdvIDCategoria_SetPredefinedFilter(ByVal sender As System.Object, ByVal e As Solmicro.Expertis.Engine.UI.AdvSearchFilterEventArgs) Handles AdvIDCategoria.SetPredefinedFilter
+        Dim f As New Filter(FilterUnionOperator.Or)
+        f.Add(New StringFilterItem("IDCategoria", 1))
+        f.Add(New StringFilterItem("IDCategoria", 2))
+        f.Add(New StringFilterItem("IDCategoria", 3))
+        f.Add(New StringFilterItem("IDCategoria", 4))
+        f.Add(New StringFilterItem("IDCategoria", 5))
+        e.Filter.Add(f)
+    End Sub
+
+    Private Sub advObra_Predeterminada_SetPredefinedFilter(ByVal sender As System.Object, ByVal e As Solmicro.Expertis.Engine.UI.AdvSearchFilterEventArgs) Handles advObra_Predeterminada.SetPredefinedFilter
+        If ExpertisApp.DataBaseName = "xTecozam50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            f.Add(New StringFilterItem("IDObra", 73))
+            f.Add(New StringFilterItem("IDObra", 16895681))
+            f.Add(New StringFilterItem("IDObra", 15331132))
+            f.Add(New StringFilterItem("IDObra", 50010))
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xFerrallas50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            f.Add(New StringFilterItem("IDObra", 12677615))
+            f.Add(New StringFilterItem("IDObra", 12677838))
+            f.Add(New StringFilterItem("IDObra", 12678141))
+            f.Add(New StringFilterItem("IDObra", 50001))
+            e.Filter.Add(f)
+        ElseIf ExpertisApp.DataBaseName = "xSecozam50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            f.Add(New StringFilterItem("IDObra", 11854231))
+            f.Add(New StringFilterItem("IDObra", 11854299))
+            e.Filter.Add(f)
+        End If
+    End Sub
+
+    Private Sub AdvIDDepartamento_SetPredefinedFilter(ByVal sender As System.Object, ByVal e As Solmicro.Expertis.Engine.UI.AdvSearchFilterEventArgs) Handles AdvIDDepartamento.SetPredefinedFilter
+        If ExpertisApp.DataBaseName = "xTecozam50R2" Then
+            Dim f As New Filter(FilterUnionOperator.Or)
+            f.Add(New StringFilterItem("IDDepartamento", "01"))
+            f.Add(New StringFilterItem("IDDepartamento", "02"))
+            f.Add(New StringFilterItem("IDDepartamento", "06"))
+            f.Add(New StringFilterItem("IDDepartamento", "32"))
+            f.Add(New StringFilterItem("IDDepartamento", "20"))
+            f.Add(New StringFilterItem("IDDepartamento", "26"))
+            f.Add(New StringFilterItem("IDDepartamento", "33"))
+            e.Filter.Add(f)
+        End If
     End Sub
 End Class
