@@ -2407,6 +2407,7 @@ Public Class MntoOperario
                 ElseIf AdvIDCategoria.Text = 4 Then
                     f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
                 ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "ADMINOBRA"))
                     f.Add(New StringFilterItem("IDOficio", "AUXILIARES"))
                     f.Add(New StringFilterItem("IDOficio", "Calidad"))
                     f.Add(New StringFilterItem("IDOficio", "COMPRAS"))
@@ -2416,11 +2417,10 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "DELEGADO"))
                     f.Add(New StringFilterItem("IDOficio", "DIRECCION"))
                     f.Add(New StringFilterItem("IDOficio", "Documentac"))
-                    f.Add(New StringFilterItem("IDOficio", "Prevencion"))
-                    f.Add(New StringFilterItem("IDOficio", "RRHH"))
-                    f.Add(New StringFilterItem("IDOficio", "ADMINOBRA"))
                     f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
                     f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
+                    f.Add(New StringFilterItem("IDOficio", "Prevencion"))
+                    f.Add(New StringFilterItem("IDOficio", "RRHH"))
                 End If
             End If         
             e.Filter.Add(f)
@@ -2438,8 +2438,8 @@ Public Class MntoOperario
                 ElseIf AdvIDCategoria.Text = 4 Then
                 ElseIf AdvIDCategoria.Text = 5 Then
                     f.Add(New StringFilterItem("IDOficio", "COND"))
-                    f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
                     f.Add(New StringFilterItem("IDOficio", "JEFETALLER"))
+                    f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
                     f.Add(New StringFilterItem("IDOficio", "LIMP"))
                     f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
                     f.Add(New StringFilterItem("IDOficio", "RECEPCION"))
