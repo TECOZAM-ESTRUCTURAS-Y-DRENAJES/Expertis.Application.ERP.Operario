@@ -1,5 +1,7 @@
 Imports Solmicro.Expertis.Business.ClasesTecozam
 Imports Solmicro.Expertis.Engine.DAL
+Imports OfficeOpenXml
+Imports Solmicro.Expertis.Engine
 
 Public Class MntoOperario
     Inherits Solmicro.Expertis.Engine.UI.SimpleMnto
@@ -1873,8 +1875,205 @@ Public Class MntoOperario
     Protected Overridable Sub LoadToolBarActions()
         Me.FormActions.Add("Ver Calendario de Operario", AddressOf VerCalendarioOperario, ExpertisApp.GetIcon("calendar.ico"))
         Me.FormActions.Add("Duplicar Operario", AddressOf DuplicarOperario)
+        'David Velasco 15/2/24
+        Me.AddSeparator()
+        Me.FormActions.Add("Generar listado CAIXA alta personas", AddressOf GenerarListadoCaixaPersonas)
+    End Sub
+    Public Sub GenerarListadoCaixaPersonas()
+        Dim dtPersonasSinProcesar As DataTable = devuelvePersonas()
+        Dim dtEstructuraTabla As DataTable = devuelveFormaTabla()
+
+        Dim dtProcesada As DataTable = devuelveTablaProcesada(dtPersonasSinProcesar, dtEstructuraTabla)
+
+        Dim ruta As String
+        ruta = DevuelveRuta()
+        ExportarExcelListadoCaixa(ruta, dtProcesada)
     End Sub
 
+    Public Sub ExportarExcelListadoCaixa(ByVal ruta As String, ByVal dtFinal As DataTable)
+
+        ExcelPackage.LicenseContext = LicenseContext.NonCommercial
+
+        Using package As New ExcelPackage(ruta)
+            Dim worksheet = package.Workbook.Worksheets.Add("1")
+            ' Copiar los datos de la DataTable a la hoja de cálculo.
+            worksheet.Cells("A1").LoadFromDataTable(dtFinal, True)
+            worksheet.Column(10).Width = 15
+            ' Aplicar formato negrita a la fila 1
+            Dim fila1 As ExcelRange = worksheet.Cells(1, 1, 1, worksheet.Dimension.End.Column)
+            fila1.Style.Font.Bold = True
+            ' Guardar el archivo de Excel.
+            package.Save()
+        End Using
+    End Sub
+
+    Public Function DevuelveRuta() As String
+        Dim CD As New SaveFileDialog()
+
+        CD.Title = "Seleccionar archivos"
+        CD.Filter = "Archivos Excel (*.xlsx)|*.xlsx"
+
+        'CD.ShowOpen()
+        CD.ShowDialog()
+
+        If CD.FileName <> "" Then
+            'lblRuta.Caption = CD.FileName
+            Return CD.FileName
+        End If
+    End Function
+    Public Function devuelveTablaProcesada(ByVal dtPersonasSinProcesar As DataTable, ByVal dtEstructuraTabla As DataTable) As DataTable
+        For Each dr As DataRow In dtPersonasSinProcesar.Rows
+            Dim drFinal As DataRow
+            drFinal = dtEstructuraTabla.NewRow
+            drFinal("CIF/NIF PROMOTOR") = devuelveNIF()
+            drFinal("NIF TITULAR") = dr("DNI").ToString
+            drFinal("PRIMER APELLIDO") = devuelvePrimerApellido(dr("DescOperario").ToString)
+            drFinal("SEGUNDO APELLIDO") = devuelveSegundoApellido(dr("DescOperario").ToString)
+            drFinal("NOMBRE") = devuelveNombre(dr("DescOperario").ToString)
+            drFinal("FECHA NACIMIENTO") = DevuelveFechaConFormato(devuelveFechaNacimiento(dr("IDOperario").ToString))
+            drFinal("SEXO") = "V"
+            drFinal("IDIOMA") = "CASTELLANO"
+            drFinal("CÓDIGO VÍA PÚBLICA") = "CL"
+            drFinal("DIRECCIÓN") = dr("Direccion").ToString
+            drFinal("CÓDIGO POSTAL") = dr("CodPostal").ToString
+            drFinal("POBLACIÓN") = dr("Poblacion").ToString
+            drFinal("NACIONALIDAD") = "ESPAÑOLA"
+            drFinal("FECHA ALTA PLAN") = DevuelveFechaConFormato("01/02/2024")
+            drFinal("CÓDIGO EMPLEADO") = dr("IDOperario").ToString
+            drFinal("INGRESOS SUPERIORES A 60.000 EUROS") = "N"
+            drFinal("EMAIL") = dr("Email").ToString
+            drFinal("MÓVIL") = dr("Telefono").ToString
+            dtEstructuraTabla.Rows.Add(drFinal)
+        Next
+        Return dtEstructuraTabla
+    End Function
+    Public Function devuelvePrimerApellido(ByVal descOperario As String) As String
+        Dim partes As String() = descOperario.Split(","c)
+
+        ' Nombre es la parte de la derecha de la coma (eliminar espacios adicionales)
+        Dim nombre As String = partes(1).Trim()
+
+        ' Parte izquierda de la coma
+        Dim parteIzquierda As String = partes(0)
+
+        ' Dividir la parte izquierda en palabras
+        Dim palabras As String() = parteIzquierda.Split(" "c)
+
+        ' El primer elemento es el primer apellido
+        Dim primerApellido As String = palabras(0)
+
+        Return primerApellido
+    End Function
+    Public Function devuelveSegundoApellido(ByVal descOperario As String) As String
+        Dim partes As String() = descOperario.Split(","c)
+
+        ' Nombre es la parte de la derecha de la coma (eliminar espacios adicionales)
+        Dim nombre As String = partes(1).Trim()
+
+        ' Parte izquierda de la coma
+        Dim parteIzquierda As String = partes(0)
+
+        ' Dividir la parte izquierda en palabras
+        Dim palabras As String() = parteIzquierda.Split(" "c)
+
+        ' El primer elemento es el primer apellido
+        Dim primerApellido As String = palabras(0)
+
+        ' El segundo elemento, si existe, es el segundo apellido
+        Dim segundoApellido As String = ""
+        If palabras.Length > 1 Then
+            For i As Integer = 1 To palabras.Length - 1
+                segundoApellido &= palabras(i)
+                If i < palabras.Length - 1 Then
+                    segundoApellido &= " "
+                End If
+            Next
+        End If
+
+        Return segundoApellido
+    End Function
+    Public Function devuelveNombre(ByVal descOperario As String) As String
+        Dim partes As String() = descOperario.Split(","c)
+
+        ' Nombre es la parte de la derecha de la coma (eliminar espacios adicionales)
+        Dim nombre As String = partes(1).Trim()
+        Return nombre
+    End Function
+    Public Function DevuelveFechaConFormato(ByVal fechanumero As String) As String
+        If fechanumero = "" Then
+            Return ""
+        End If
+        Dim fechaActual As DateTime = fechanumero
+        Dim formatoPersonalizado As String = "dd/MM/yyyy"
+        Dim fechaComoStringConFormato As String = fechaActual.ToString(formatoPersonalizado)
+
+        Return fechaComoStringConFormato
+
+    End Function
+
+    Public Function devuelveNIF() As String
+        Dim dt As New DataTable
+        Dim f As New Filter
+        dt = New BE.DataEngine().Filter("tbDatosEmpresa", f)
+        Return dt.Rows(0)("Cif").ToString
+    End Function
+    Public Function devuelveFechaNacimiento(ByVal idoperario As String) As String
+        Dim dt As New DataTable
+        Dim f As New Filter
+        f.Add("IDOperario", FilterOperator.Equal, idoperario)
+        dt = New BE.DataEngine().Filter("tbMaestroOperarioSAt", f)
+        Return dt.Rows(0)("Fecha_Nacimiento").ToString
+    End Function
+    Public Function devuelvePersonas() As DataTable
+        Dim dt As New DataTable
+        Dim f As New Filter
+        f.Add("Fecha_Baja", FilterOperator.Equal, System.DBNull.Value)
+        Return New BE.DataEngine().Filter("frmMntoOperario", f)
+    End Function
+    Public Function devuelveFormaTabla() As DataTable
+        Dim dt As New DataTable
+
+        Dim dc As New DataColumn("CIF/NIF PROMOTOR")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("NIF TITULAR")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("PRIMER APELLIDO")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("SEGUNDO APELLIDO")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("NOMBRE")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("FECHA NACIMIENTO")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("SEXO")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("IDIOMA")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("CÓDIGO VÍA PÚBLICA")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("DIRECCIÓN")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("CÓDIGO POSTAL")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("POBLACIÓN")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("NACIONALIDAD")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("FECHA ALTA PLAN")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("CÓDIGO EMPLEADO")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("INGRESOS SUPERIORES A 60.000 EUROS")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("EMAIL")
+        dt.Columns.Add(dc)
+        dc = New DataColumn("MÓVIL")
+        dt.Columns.Add(dc)
+        Return dt
+
+    End Function
+
+    '-----FIN DAVID
     Protected Overridable Sub LoadEnums()
         CmbTipoDocIdent.DataSource = EnumData.EnumView("enumTipoDocIdent")
     End Sub
@@ -2425,7 +2624,7 @@ Public Class MntoOperario
             End If         
             e.Filter.Add(f)
         ElseIf ExpertisApp.DataBaseName = "xFerrallas50R2" Then
-            Dim f As New Filter(FilterUnionOperator.Or)
+            Dim f As New Engine.Filter(FilterUnionOperator.Or)
             If Len(AdvIDCategoria.Text) <> 0 Then
                 If AdvIDCategoria.Text = 1 Then
                 ElseIf AdvIDCategoria.Text = 2 Then
