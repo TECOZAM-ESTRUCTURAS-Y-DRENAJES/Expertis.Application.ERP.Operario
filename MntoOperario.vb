@@ -2673,6 +2673,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
                 ElseIf AdvIDCategoria.Text = 3 Then
                     f.Add(New StringFilterItem("IDOficio", "ENC"))
+                    f.Add(New StringFilterItem("IDOficio", "FERR"))
                 ElseIf AdvIDCategoria.Text = 4 Then
                     f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
                 ElseIf AdvIDCategoria.Text = 5 Then
@@ -2687,6 +2688,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "ENCARGADO"))
                 ElseIf AdvIDCategoria.Text = 3 Then
                     f.Add(New StringFilterItem("IDOficio", "ENC"))
+                    f.Add(New StringFilterItem("IDOficio", "FERR"))
                 ElseIf AdvIDCategoria.Text = 4 Then
                     f.Add(New StringFilterItem("IDOficio", "TEC_OBRA"))
                 ElseIf AdvIDCategoria.Text = 5 Then

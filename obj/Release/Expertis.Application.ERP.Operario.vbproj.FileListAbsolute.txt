@@ -47,7 +47,6 @@ C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.O
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoGrupo.resources
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.MntoOperario.resources
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.Resources.resources
-C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Solmicro.Expertis.Application.ERP.Operario.prueba.resources
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.vbproj.GenerateResource.Cache
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll.licenses
 C:\Users\dvelasco\Desktop\FuentesExpertis\Application\Expertis.Application.ERP.Operario\obj\Release\Expertis.Application.ERP.Operario.dll
