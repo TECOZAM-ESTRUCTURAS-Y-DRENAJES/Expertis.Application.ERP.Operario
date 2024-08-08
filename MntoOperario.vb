@@ -2616,6 +2616,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "DELEGADO"))
                     f.Add(New StringFilterItem("IDOficio", "DIRECCION"))
                     f.Add(New StringFilterItem("IDOficio", "Documentac"))
+                    f.Add(New StringFilterItem("IDOficio", "ENCOFRADOS"))
                     f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
                     f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
                     f.Add(New StringFilterItem("IDOficio", "Prevencion"))
@@ -2731,6 +2732,8 @@ Public Class MntoOperario
             f.Add(New StringFilterItem("IDObra", 16895681))
             f.Add(New StringFilterItem("IDObra", 15331132))
             f.Add(New StringFilterItem("IDObra", 50010))
+            f.Add(New StringFilterItem("IDObra", 16901645))
+            f.Add(New StringFilterItem("IDObra", 17734421))
             e.Filter.Add(f)
         ElseIf ExpertisApp.DataBaseName = "xFerrallas50R2" Then
             Dim f As New Filter(FilterUnionOperator.Or)
