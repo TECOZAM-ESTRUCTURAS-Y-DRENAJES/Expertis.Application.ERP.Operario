@@ -2618,6 +2618,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "Documentac"))
                     f.Add(New StringFilterItem("IDOficio", "ENCOFRADOS"))
                     f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
+                    f.Add(New StringFilterItem("IDOficio", "TECDES"))
                     f.Add(New StringFilterItem("IDOficio", "MEDICIONES"))
                     f.Add(New StringFilterItem("IDOficio", "Prevencion"))
                     f.Add(New StringFilterItem("IDOficio", "RRHH"))
