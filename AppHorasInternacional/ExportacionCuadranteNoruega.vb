@@ -7,6 +7,9 @@ Imports System.Collections.Generic
 
 Public Class ExportacionCuadranteNoruega
 
+    Public tablaDatos As String
+    Public tipoExportacion As String
+
     Public Sub generaExcelNoruega()
         Dim frm As New frmInformeFechas
         frm.ShowDialog()
@@ -230,7 +233,7 @@ Public Class ExportacionCuadranteNoruega
         filtro.Add("FechaParte", FilterOperator.GreaterThanOrEqual, fechaInicio)
         filtro.Add("FechaParte", FilterOperator.LessThanOrEqual, fechaFin)
 
-        dtRegistro = New BE.DataEngine().Filter("tbHorasInternacional", filtro)
+        dtRegistro = New BE.DataEngine().Filter(tablaDatos, filtro)
 
         ' Crear diccionarios para almacenar las horas de entrada y salida por operario y fecha
         Dim horasEntrada As New Dictionary(Of String, Dictionary(Of DateTime, String))()
@@ -298,7 +301,7 @@ Public Class ExportacionCuadranteNoruega
         Dim filtro As New Filter
         filtro.Add("FechaParte", FilterOperator.Equal, fechaParte)
         filtro.Add("IDOperario", FilterOperator.Equal, IDOperario)
-        dtRegistro = New BE.DataEngine().Filter("tbHorasInternacional", filtro)
+        dtRegistro = New BE.DataEngine().Filter(tablaDatos, filtro)
 
         If dtRegistro.Rows.Count > 0 Then
             Return dtRegistro.Rows(0)("HoraEntrada").ToString
@@ -316,7 +319,7 @@ Public Class ExportacionCuadranteNoruega
         Dim filtro As New Filter
         filtro.Add("FechaParte", FilterOperator.Equal, fechaParte)
         filtro.Add("IDOperario", FilterOperator.Equal, IDOperario)
-        dtRegistro = New BE.DataEngine().Filter("tbHorasInternacional", filtro)
+        dtRegistro = New BE.DataEngine().Filter(tablaDatos, filtro)
 
         If dtRegistro.Rows.Count > 0 Then
             Return dtRegistro.Rows(0)("HoraSalida").ToString
@@ -510,15 +513,15 @@ Public Class ExportacionCuadranteNoruega
                 ' Verifica si la celda actual tiene un valor
                 If Len(celda) <> 0 Then
                     ' Asigna la fórmula a la celda actual si está vacía
-                    Dim formula As String = "=IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "A" & ChrW(34) & ", " & ChrW(34) & "A" & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & ChrW(34) & ", " & ChrW(34) & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & "V" & ChrW(34) & ", " & ChrW(34) & "V" & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & "UA" & ChrW(34) & ", " & ChrW(34) & "UA" & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & "VIAJE" & ChrW(34) & ", " & ChrW(34) & "VIAJE" & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & "B" & ChrW(34) & ", " & ChrW(34) & "B" & ChrW(34) & ", IF(" & _
-                                    sourceColumnLetter & row & "=" & ChrW(34) & "H" & ChrW(34) & ", " & ChrW(34) & "H" & ChrW(34) & ", " & _
-                                    sourceColumnLetter & row & "-" & GetColumnLetter(col + 31) & row & ")))))))"
-                    worksheet.Cells(row, col).Formula = formula
+                    Dim formula As String = "=IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "A" & ChrW(34) & ", " & ChrW(34) & "A" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & ChrW(34) & ", " & ChrW(34) & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "V" & ChrW(34) & ", " & ChrW(34) & "V" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "UA" & ChrW(34) & ", " & ChrW(34) & "UA" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "VIAJE" & ChrW(34) & ", " & ChrW(34) & "VIAJE" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "B" & ChrW(34) & ", " & ChrW(34) & "B" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "H" & ChrW(34) & ", " & ChrW(34) & "H" & ChrW(34) & _
+                         ", IF(" & sourceColumnLetter & row & "=" & ChrW(34) & "D" & ChrW(34) & ", " & ChrW(34) & "D" & ChrW(34) & _
+                         ", " & sourceColumnLetter & row & "-" & GetColumnLetter(col + 31) & row & "))))))))"
 
                     ' Obtén el color de la fuente de la celda fuente
                     Dim sourceCell = worksheet.Cells(row, sourceColumn)
@@ -943,7 +946,7 @@ Public Class ExportacionCuadranteNoruega
         Dim f As New Filter
         f.Add("FechaParte", FilterOperator.Equal, fechaComparar)
         f.Add("IDOperario", FilterOperator.Equal, dr("EXP."))
-        dt = New BE.DataEngine().Filter("tbHorasInternacional", f)
+        dt = New BE.DataEngine().Filter(tablaDatos, f)
 
         If dt.Rows.Count > 0 Then
             Dim IDCausa As String = Nz(dt.Rows(0)("IDCausa").ToString, "")
@@ -983,7 +986,18 @@ Public Class ExportacionCuadranteNoruega
     Private Sub EscribirHorasProductivas(ByVal worksheet As ExcelWorksheet, ByVal dt As DataTable, ByVal fila As Integer, ByVal dia As Integer)
         Dim columna As Integer = dia + 6 ' Columna G es la columna 7, por lo que agregamos 6
         Dim celda As ExcelRange = worksheet.Cells(fila + 5, columna)
-        Dim horas As Double = dt.Rows(0)("HorasProductivas").ToString.Replace(".", ",")
+
+        Dim horas As Double = 0
+
+        If tipoExportacion = "ORIGINAL" Then
+            If Not IsDBNull(dt.Rows(0)("Horas")) Then
+                Double.TryParse(dt.Rows(0)("Horas").ToString(), horas)
+            End If
+        ElseIf tipoExportacion = "TECOZAM" Then
+            horas = dt.Rows(0)("Horas").ToString.Replace(".", ",")
+        End If
+
+
         celda.Value = horas
 
         If Len(dt.Rows(0)("Comentarios").ToString) <> 0 Then

@@ -18,8 +18,11 @@
 
     Private Sub exportacion()
         ' Crear una instancia de la clase ExportacionCuadranteNoruega
+        Dim tablaOriginal As String = "frmMntoHorasInternacionalTecozam"
         Dim exportacion As New ExportacionCuadranteNoruega()
         ' Llamar al método generaExcelNoruega
+        exportacion.tablaDatos = tablaOriginal
+        exportacion.tipoExportacion = "TECOZAM"
         exportacion.generaExcelNoruega()
     End Sub
 End Class
