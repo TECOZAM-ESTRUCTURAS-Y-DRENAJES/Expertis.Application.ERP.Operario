@@ -217,6 +217,19 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppHorasInternacional\AppHorasInternacional.Designer.vb">
+      <DependentUpon>AppHorasInternacional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppHorasInternacional\AppHorasInternacional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppHorasInternacional\ExportacionCuadranteNoruega.vb" />
+    <Compile Include="AppHorasInternacional\frmInformeFechas.Designer.vb">
+      <DependentUpon>frmInformeFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AppHorasInternacional\frmInformeFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AssemblyInfo.vb">
       <SubType>Code</SubType>
     </Compile>
@@ -270,6 +283,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AppHorasInternacional\AppHorasInternacional.resx">
+      <DependentUpon>AppHorasInternacional.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppHorasInternacional\frmInformeFechas.resx">
+      <DependentUpon>frmInformeFechas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.vb</DependentUpon>
       <SubType>Designer</SubType>

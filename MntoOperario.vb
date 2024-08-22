@@ -1878,7 +1878,29 @@ Public Class MntoOperario
         'David Velasco 15/2/24
         Me.AddSeparator()
         Me.FormActions.Add("Generar listado CAIXA alta personas", AddressOf GenerarListadoCaixaPersonas)
+        'David Velasco 22/8/24
+        Me.AddSeparator()
+
+        If ExpertisApp.DataBaseName = "xTecozamNorge50R2" Then
+            Me.FormActions.Add("Listado de horas Tecozam", AddressOf GenerarCuadranteHorasNoruega)
+        End If
     End Sub
+    Public Sub GenerarCuadranteHorasNoruega()
+        ' Solicitar la contraseña al usuario
+        Dim inputPassword As String = InputBox("Por favor, introduzca la contraseña:", "Contraseña requerida")
+
+        ' Verificar si la contraseña es "zz"
+        If inputPassword = "zz" Then
+            ' Contraseña correcta, se ejecuta la exportación
+            Dim frm As New AppHorasInternacional
+            frm.ShowDialog()
+        Else
+            ' Contraseña incorrecta, mostrar mensaje y salir
+            MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+    End Sub
+
     Public Sub GenerarListadoCaixaPersonas()
         Dim dtPersonasSinProcesar As DataTable = devuelvePersonas()
         Dim dtEstructuraTabla As DataTable = devuelveFormaTabla()
