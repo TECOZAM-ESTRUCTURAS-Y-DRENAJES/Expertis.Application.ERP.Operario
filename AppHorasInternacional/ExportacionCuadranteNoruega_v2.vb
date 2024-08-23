@@ -3,9 +3,10 @@ Imports System.Windows.Forms
 Imports OfficeOpenXml
 Imports OfficeOpenXml.Style
 Imports System.Drawing
+Imports System.IO
 Imports System.Collections.Generic
 
-Public Class ExportacionCuadranteNoruega
+Public Class ExportacionCuadranteNoruega_v2
 
     Public tablaDatos As String
     Public tipoExportacion As String

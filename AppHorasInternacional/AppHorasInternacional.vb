@@ -1,4 +1,6 @@
-﻿Public Class AppHorasInternacional
+﻿Imports Expertis.Application.ERP.HorasTrab
+
+Public Class AppHorasInternacional
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()
@@ -19,7 +21,7 @@
     Private Sub exportacion()
         ' Crear una instancia de la clase ExportacionCuadranteNoruega
         Dim tablaOriginal As String = "frmMntoHorasInternacionalTecozam"
-        Dim exportacion As New ExportacionCuadranteNoruega()
+        Dim exportacion As New ExportacionNoruegaCuadrante()
         ' Llamar al método generaExcelNoruega
         exportacion.tablaDatos = tablaOriginal
         exportacion.tipoExportacion = "TECOZAM"
