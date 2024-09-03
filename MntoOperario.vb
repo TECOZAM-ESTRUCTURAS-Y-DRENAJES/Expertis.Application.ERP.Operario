@@ -1894,9 +1894,6 @@ Public Class MntoOperario
             ' Contraseña correcta, se ejecuta la exportación
             Dim frm As New AppHorasInternacional
             frm.ShowDialog()
-        Else
-            ' Contraseña incorrecta, mostrar mensaje y salir
-            MessageBox.Show("Contraseña incorrecta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
     End Sub
@@ -2584,30 +2581,30 @@ Public Class MntoOperario
     End Sub
 
     Private Sub advObra_Predeterminada_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles advObra_Predeterminada.Enter
-        Dim IDObra As String = ""
-        IDObra = advObra_Predeterminada.Text
-        If Len(IDObra) > 0 Then
+        'Dim IDObra As String = ""
+        'IDObra = advObra_Predeterminada.Text
+        'If Len(IDObra) > 0 Then
 
-            'Dim nObra As String
-            'nObra = devuelveNObra(advObra_Predeterminada.Text)
-            Try
-                If IDObra = devuelveUltimaObra() Then
-                    'MsgBox("Es misma obra, no se añade nada.")
-                Else
-                    'MsgBox("Se añade obra")
-                    Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
-                    If result = DialogResult.Yes Then
-                        AñadeLineaHistorico(IDObra)
-                    End If
-                End If
-            Catch ex As Exception
-                Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
-                If result = DialogResult.Yes Then
-                    AñadeLineaHistorico(IDObra)
-                End If
-            End Try
-            Me.UpdateData()
-        End If
+        '    'Dim nObra As String
+        '    'nObra = devuelveNObra(advObra_Predeterminada.Text)
+        '    Try
+        '        If IDObra = devuelveUltimaObra() Then
+        '            'MsgBox("Es misma obra, no se añade nada.")
+        '        Else
+        '            'MsgBox("Se añade obra")
+        '            Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
+        '            If result = DialogResult.Yes Then
+        '                AñadeLineaHistorico(IDObra)
+        '            End If
+        '        End If
+        '    Catch ex As Exception
+        '        Dim result As DialogResult = MessageBox.Show("¿Deseas actualizar a este operario de obra_predeterminada ? Se añadará la obra anterior al historial.", "Confirmación datos", MessageBoxButtons.YesNo)
+        '        If result = DialogResult.Yes Then
+        '            AñadeLineaHistorico(IDObra)
+        '        End If
+        '    End Try
+        '    Me.UpdateData()
+        'End If
 
     End Sub
 
