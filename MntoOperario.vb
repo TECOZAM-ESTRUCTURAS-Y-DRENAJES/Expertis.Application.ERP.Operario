@@ -176,6 +176,8 @@ Public Class MntoOperario
     Friend WithEvents txtsortcode As Solmicro.Expertis.Engine.UI.TextBox
     Friend WithEvents ntbJornadaParcial As Solmicro.Expertis.Engine.UI.NumericTextBox
     Friend WithEvents lblJornadaParcial As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents chbFirmaApp As Solmicro.Expertis.Engine.UI.CheckBox
+    Friend WithEvents lblFirmaApp As Solmicro.Expertis.Engine.UI.Label
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -328,6 +330,8 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.chbFirmaApp = New Solmicro.Expertis.Engine.UI.CheckBox
+        Me.lblFirmaApp = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -691,6 +695,8 @@ Public Class MntoOperario
         '
         'pnlFichaOperario
         '
+        Me.pnlFichaOperario.Controls.Add(Me.chbFirmaApp)
+        Me.pnlFichaOperario.Controls.Add(Me.lblFirmaApp)
         Me.pnlFichaOperario.Controls.Add(Me.ntbJornadaParcial)
         Me.pnlFichaOperario.Controls.Add(Me.lblJornadaParcial)
         Me.pnlFichaOperario.Controls.Add(Me.txtIDGET)
@@ -1808,6 +1814,22 @@ Public Class MntoOperario
         Me.cbxUsuario.Size = New System.Drawing.Size(305, 21)
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
+        '
+        'chbFirmaApp
+        '
+        Me.TryDataBinding(chbFirmaApp, New System.Windows.Forms.Binding("BindableValue", Me, "FirmaApp", True))
+        Me.chbFirmaApp.Location = New System.Drawing.Point(865, 405)
+        Me.chbFirmaApp.Name = "chbFirmaApp"
+        Me.chbFirmaApp.Size = New System.Drawing.Size(15, 15)
+        Me.chbFirmaApp.TabIndex = 146
+        '
+        'lblFirmaApp
+        '
+        Me.lblFirmaApp.Location = New System.Drawing.Point(799, 406)
+        Me.lblFirmaApp.Name = "lblFirmaApp"
+        Me.lblFirmaApp.Size = New System.Drawing.Size(61, 13)
+        Me.lblFirmaApp.TabIndex = 147
+        Me.lblFirmaApp.Text = "FirmaApp"
         '
         'MntoOperario
         '
