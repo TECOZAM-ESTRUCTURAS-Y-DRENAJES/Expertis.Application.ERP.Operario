@@ -1903,9 +1903,9 @@ Public Class MntoOperario
         'David Velasco 22/8/24
         Me.AddSeparator()
 
-        If ExpertisApp.DataBaseName = "xTecozamNorge50R2" Then
-            Me.FormActions.Add("Listado de horas Tecozam", AddressOf GenerarCuadranteHorasNoruega)
-        End If
+        'If ExpertisApp.DataBaseName = "xTecozamNorge50R2" Then
+        '    Me.FormActions.Add("Listado de horas Tecozam", AddressOf GenerarCuadranteHorasNoruega)
+        'End If
     End Sub
     Public Sub GenerarCuadranteHorasNoruega()
         ' Solicitar la contraseña al usuario
