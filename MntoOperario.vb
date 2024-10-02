@@ -221,6 +221,8 @@ Public Class MntoOperario
         Me.ntbC_H_N = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblC_H_N = New Solmicro.Expertis.Engine.UI.Label
         Me.pnlFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
+        Me.chbFirmaApp = New Solmicro.Expertis.Engine.UI.CheckBox
+        Me.lblFirmaApp = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblJornadaParcial = New Solmicro.Expertis.Engine.UI.Label
         Me.txtIDGET = New Solmicro.Expertis.Engine.UI.TextBox
@@ -330,8 +332,6 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.chbFirmaApp = New Solmicro.Expertis.Engine.UI.CheckBox
-        Me.lblFirmaApp = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -705,7 +705,6 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Controls.Add(Me.Label2)
         Me.pnlFichaOperario.Controls.Add(Me.chbPermisoGD)
         Me.pnlFichaOperario.Controls.Add(Me.lblPermisoGD)
-        Me.pnlFichaOperario.Controls.Add(Me.GridHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.btnHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.txtTextoCondiciones)
         Me.pnlFichaOperario.Controls.Add(Me.lblTextoCondiciones)
@@ -756,6 +755,22 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Name = "pnlFichaOperario"
         Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 593)
         Me.pnlFichaOperario.TabIndex = 0
+        '
+        'chbFirmaApp
+        '
+        Me.TryDataBinding(chbFirmaApp, New System.Windows.Forms.Binding("BindableValue", Me, "FirmaApp", True))
+        Me.chbFirmaApp.Location = New System.Drawing.Point(865, 405)
+        Me.chbFirmaApp.Name = "chbFirmaApp"
+        Me.chbFirmaApp.Size = New System.Drawing.Size(15, 15)
+        Me.chbFirmaApp.TabIndex = 146
+        '
+        'lblFirmaApp
+        '
+        Me.lblFirmaApp.Location = New System.Drawing.Point(799, 406)
+        Me.lblFirmaApp.Name = "lblFirmaApp"
+        Me.lblFirmaApp.Size = New System.Drawing.Size(61, 13)
+        Me.lblFirmaApp.TabIndex = 147
+        Me.lblFirmaApp.Text = "FirmaApp"
         '
         'ntbJornadaParcial
         '
@@ -834,7 +849,7 @@ Public Class MntoOperario
         Me.GridHistorico.EntityName = "OperarioHistorico"
         Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(529, 57)
+        Me.GridHistorico.Location = New System.Drawing.Point(262, -52)
         Me.GridHistorico.Name = "GridHistorico"
         Me.GridHistorico.PrimaryDataFields = "IDOperario"
         Me.GridHistorico.SecondaryDataFields = "IdOperario"
@@ -1127,6 +1142,7 @@ Public Class MntoOperario
         Me.FraDatosContacto.Controls.Add(Me.advIDPais)
         Me.FraDatosContacto.Controls.Add(Me.txtProvincia)
         Me.FraDatosContacto.Controls.Add(Me.lblDireccion)
+        Me.FraDatosContacto.Controls.Add(Me.GridHistorico)
         Me.FraDatosContacto.Controls.Add(Me.lblPoblacion)
         Me.FraDatosContacto.Controls.Add(Me.lblProvincia)
         Me.FraDatosContacto.Controls.Add(Me.lblIDPais)
@@ -1814,22 +1830,6 @@ Public Class MntoOperario
         Me.cbxUsuario.Size = New System.Drawing.Size(305, 21)
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
-        '
-        'chbFirmaApp
-        '
-        Me.TryDataBinding(chbFirmaApp, New System.Windows.Forms.Binding("BindableValue", Me, "FirmaApp", True))
-        Me.chbFirmaApp.Location = New System.Drawing.Point(865, 405)
-        Me.chbFirmaApp.Name = "chbFirmaApp"
-        Me.chbFirmaApp.Size = New System.Drawing.Size(15, 15)
-        Me.chbFirmaApp.TabIndex = 146
-        '
-        'lblFirmaApp
-        '
-        Me.lblFirmaApp.Location = New System.Drawing.Point(799, 406)
-        Me.lblFirmaApp.Name = "lblFirmaApp"
-        Me.lblFirmaApp.Size = New System.Drawing.Size(61, 13)
-        Me.lblFirmaApp.TabIndex = 147
-        Me.lblFirmaApp.Text = "FirmaApp"
         '
         'MntoOperario
         '
