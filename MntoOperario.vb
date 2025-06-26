@@ -178,6 +178,8 @@ Public Class MntoOperario
     Friend WithEvents lblJornadaParcial As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents chbFirmaApp As Solmicro.Expertis.Engine.UI.CheckBox
     Friend WithEvents lblFirmaApp As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents clbFechaCaducidadPermiso As Solmicro.Expertis.Engine.UI.CalendarBox
+    Friend WithEvents lblFechaCaducidadPermiso As Solmicro.Expertis.Engine.UI.Label
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -332,6 +334,8 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.clbFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.CalendarBox
+        Me.lblFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1114,6 +1118,8 @@ Public Class MntoOperario
         '
         'FraDatosContacto
         '
+        Me.FraDatosContacto.Controls.Add(Me.clbFechaCaducidadPermiso)
+        Me.FraDatosContacto.Controls.Add(Me.lblFechaCaducidadPermiso)
         Me.FraDatosContacto.Controls.Add(Me.txtDireccion)
         Me.FraDatosContacto.Controls.Add(Me.lblFax)
         Me.FraDatosContacto.Controls.Add(Me.txtFax)
@@ -1334,7 +1340,7 @@ Public Class MntoOperario
         'chkExterno
         '
         Me.TryDataBinding(chkExterno, New System.Windows.Forms.Binding("BindableValue", Me, "Externo", True))
-        Me.chkExterno.Location = New System.Drawing.Point(905, 18)
+        Me.chkExterno.Location = New System.Drawing.Point(797, 48)
         Me.chkExterno.Name = "chkExterno"
         Me.chkExterno.Size = New System.Drawing.Size(64, 19)
         Me.chkExterno.TabIndex = 8
@@ -1831,6 +1837,23 @@ Public Class MntoOperario
         Me.cbxUsuario.Size = New System.Drawing.Size(305, 21)
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
+        '
+        'clbFechaCaducidadPermiso
+        '
+        Me.TryDataBinding(clbFechaCaducidadPermiso, New System.Windows.Forms.Binding("BindableValue", Me, "FechaCaducidadPermiso", True))
+        Me.clbFechaCaducidadPermiso.DisabledBackColor = System.Drawing.Color.White
+        Me.clbFechaCaducidadPermiso.Location = New System.Drawing.Point(815, 16)
+        Me.clbFechaCaducidadPermiso.Name = "clbFechaCaducidadPermiso"
+        Me.clbFechaCaducidadPermiso.Size = New System.Drawing.Size(121, 21)
+        Me.clbFechaCaducidadPermiso.TabIndex = 138
+        '
+        'lblFechaCaducidadPermiso
+        '
+        Me.lblFechaCaducidadPermiso.Location = New System.Drawing.Point(663, 24)
+        Me.lblFechaCaducidadPermiso.Name = "lblFechaCaducidadPermiso"
+        Me.lblFechaCaducidadPermiso.Size = New System.Drawing.Size(146, 13)
+        Me.lblFechaCaducidadPermiso.TabIndex = 139
+        Me.lblFechaCaducidadPermiso.Text = "FechaCaducidadPermiso"
         '
         'MntoOperario
         '
