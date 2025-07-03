@@ -185,8 +185,8 @@ Public Class MntoOperario
         Me.components = New System.ComponentModel.Container
         Dim GridHistoricoPersonal_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MntoOperario))
-        Dim CmbTipoDocIdent_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim GridHistorico_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim CmbTipoDocIdent_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim cbxUsuario_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.PicFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
         Me.txtDiccionario = New Solmicro.Expertis.Engine.UI.TextBox
@@ -235,6 +235,7 @@ Public Class MntoOperario
         Me.lblPermisoGD = New Solmicro.Expertis.Engine.UI.Label
         Me.btnHistorico = New Solmicro.Expertis.Engine.UI.Button
         Me.txtTextoCondiciones = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.lblTextoCondiciones = New Solmicro.Expertis.Engine.UI.Label
         Me.txtTexto = New Solmicro.Expertis.Engine.UI.TextBox
         Me.Frame2 = New Solmicro.Expertis.Engine.UI.Frame
@@ -263,6 +264,8 @@ Public Class MntoOperario
         Me.CmbTipoDocIdent = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.LblTipoDocIdent = New Solmicro.Expertis.Engine.UI.Label
         Me.FraDatosContacto = New Solmicro.Expertis.Engine.UI.Frame
+        Me.clbFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.CalendarBox
+        Me.lblFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.Label
         Me.txtDireccion = New Solmicro.Expertis.Engine.UI.TextBox
         Me.lblFax = New Solmicro.Expertis.Engine.UI.Label
         Me.txtFax = New Solmicro.Expertis.Engine.UI.TextBox
@@ -273,7 +276,6 @@ Public Class MntoOperario
         Me.advIDPais = New Solmicro.Expertis.Engine.UI.AdvSearch
         Me.txtProvincia = New Solmicro.Expertis.Engine.UI.TextBox
         Me.lblDireccion = New Solmicro.Expertis.Engine.UI.Label
-        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.lblPoblacion = New Solmicro.Expertis.Engine.UI.Label
         Me.lblProvincia = New Solmicro.Expertis.Engine.UI.Label
         Me.lblIDPais = New Solmicro.Expertis.Engine.UI.Label
@@ -334,8 +336,6 @@ Public Class MntoOperario
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.clbFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.CalendarBox
-        Me.lblFechaCaducidadPermiso = New Solmicro.Expertis.Engine.UI.Label
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiCommandManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -343,11 +343,11 @@ Public Class MntoOperario
         Me.PicFichaOperario.suspendlayout()
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFichaOperario.suspendlayout()
+        CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
         Me.Frame1.SuspendLayout()
         CType(Me.CmbTipoDocIdent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FraDatosContacto.SuspendLayout()
-        CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FraCondEco.SuspendLayout()
         CType(Me.cbxUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -711,6 +711,7 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Controls.Add(Me.lblPermisoGD)
         Me.pnlFichaOperario.Controls.Add(Me.btnHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.txtTextoCondiciones)
+        Me.pnlFichaOperario.Controls.Add(Me.GridHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.lblTextoCondiciones)
         Me.pnlFichaOperario.Controls.Add(Me.txtTexto)
         Me.pnlFichaOperario.Controls.Add(Me.Frame2)
@@ -861,6 +862,24 @@ Public Class MntoOperario
         Me.txtTextoCondiciones.Name = "txtTextoCondiciones"
         Me.txtTextoCondiciones.Size = New System.Drawing.Size(964, 62)
         Me.txtTextoCondiciones.TabIndex = 134
+        '
+        'GridHistorico
+        '
+        Me.GridHistorico.ColumnAutoResize = True
+        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
+        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
+        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
+        Me.GridHistorico.EntityName = "OperarioHistorico"
+        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridHistorico.KeyField = "IDOperario"
+        Me.GridHistorico.Location = New System.Drawing.Point(468, 79)
+        Me.GridHistorico.Name = "GridHistorico"
+        Me.GridHistorico.PrimaryDataFields = "IDOperario"
+        Me.GridHistorico.SecondaryDataFields = "IdOperario"
+        Me.GridHistorico.Size = New System.Drawing.Size(453, 161)
+        Me.GridHistorico.TabIndex = 137
+        Me.GridHistorico.ViewName = "tbOperarioHistorico"
+        Me.GridHistorico.Visible = False
         '
         'lblTextoCondiciones
         '
@@ -1130,7 +1149,6 @@ Public Class MntoOperario
         Me.FraDatosContacto.Controls.Add(Me.advIDPais)
         Me.FraDatosContacto.Controls.Add(Me.txtProvincia)
         Me.FraDatosContacto.Controls.Add(Me.lblDireccion)
-        Me.FraDatosContacto.Controls.Add(Me.GridHistorico)
         Me.FraDatosContacto.Controls.Add(Me.lblPoblacion)
         Me.FraDatosContacto.Controls.Add(Me.lblProvincia)
         Me.FraDatosContacto.Controls.Add(Me.lblIDPais)
@@ -1147,6 +1165,23 @@ Public Class MntoOperario
         Me.FraDatosContacto.TabIndex = 10
         Me.FraDatosContacto.TabStop = False
         Me.FraDatosContacto.Text = "Datos Contacto"
+        '
+        'clbFechaCaducidadPermiso
+        '
+        Me.TryDataBinding(clbFechaCaducidadPermiso, New System.Windows.Forms.Binding("BindableValue", Me, "FechaCaducidadPermiso", True))
+        Me.clbFechaCaducidadPermiso.DisabledBackColor = System.Drawing.Color.White
+        Me.clbFechaCaducidadPermiso.Location = New System.Drawing.Point(815, 16)
+        Me.clbFechaCaducidadPermiso.Name = "clbFechaCaducidadPermiso"
+        Me.clbFechaCaducidadPermiso.Size = New System.Drawing.Size(121, 21)
+        Me.clbFechaCaducidadPermiso.TabIndex = 138
+        '
+        'lblFechaCaducidadPermiso
+        '
+        Me.lblFechaCaducidadPermiso.Location = New System.Drawing.Point(663, 24)
+        Me.lblFechaCaducidadPermiso.Name = "lblFechaCaducidadPermiso"
+        Me.lblFechaCaducidadPermiso.Size = New System.Drawing.Size(146, 13)
+        Me.lblFechaCaducidadPermiso.TabIndex = 139
+        Me.lblFechaCaducidadPermiso.Text = "FechaCaducidadPermiso"
         '
         'txtDireccion
         '
@@ -1242,24 +1277,6 @@ Public Class MntoOperario
         Me.lblDireccion.Size = New System.Drawing.Size(60, 13)
         Me.lblDireccion.TabIndex = 37
         Me.lblDireccion.Text = "Dirección"
-        '
-        'GridHistorico
-        '
-        Me.GridHistorico.ColumnAutoResize = True
-        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
-        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
-        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
-        Me.GridHistorico.EntityName = "OperarioHistorico"
-        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(262, -52)
-        Me.GridHistorico.Name = "GridHistorico"
-        Me.GridHistorico.PrimaryDataFields = "IDOperario"
-        Me.GridHistorico.SecondaryDataFields = "IdOperario"
-        Me.GridHistorico.Size = New System.Drawing.Size(398, 161)
-        Me.GridHistorico.TabIndex = 137
-        Me.GridHistorico.ViewName = "tbOperarioHistorico"
-        Me.GridHistorico.Visible = False
         '
         'lblPoblacion
         '
@@ -1838,23 +1855,6 @@ Public Class MntoOperario
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
         '
-        'clbFechaCaducidadPermiso
-        '
-        Me.TryDataBinding(clbFechaCaducidadPermiso, New System.Windows.Forms.Binding("BindableValue", Me, "FechaCaducidadPermiso", True))
-        Me.clbFechaCaducidadPermiso.DisabledBackColor = System.Drawing.Color.White
-        Me.clbFechaCaducidadPermiso.Location = New System.Drawing.Point(815, 16)
-        Me.clbFechaCaducidadPermiso.Name = "clbFechaCaducidadPermiso"
-        Me.clbFechaCaducidadPermiso.Size = New System.Drawing.Size(121, 21)
-        Me.clbFechaCaducidadPermiso.TabIndex = 138
-        '
-        'lblFechaCaducidadPermiso
-        '
-        Me.lblFechaCaducidadPermiso.Location = New System.Drawing.Point(663, 24)
-        Me.lblFechaCaducidadPermiso.Name = "lblFechaCaducidadPermiso"
-        Me.lblFechaCaducidadPermiso.Size = New System.Drawing.Size(146, 13)
-        Me.lblFechaCaducidadPermiso.TabIndex = 139
-        Me.lblFechaCaducidadPermiso.Text = "FechaCaducidadPermiso"
-        '
         'MntoOperario
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 14)
@@ -1873,6 +1873,7 @@ Public Class MntoOperario
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFichaOperario.ResumeLayout(False)
         Me.pnlFichaOperario.PerformLayout()
+        CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame2.ResumeLayout(False)
         Me.Frame2.PerformLayout()
         Me.Frame1.ResumeLayout(False)
@@ -1880,7 +1881,6 @@ Public Class MntoOperario
         CType(Me.CmbTipoDocIdent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FraDatosContacto.ResumeLayout(False)
         Me.FraDatosContacto.PerformLayout()
-        CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).EndInit()
         Me.FraCondEco.ResumeLayout(False)
         Me.FraCondEco.PerformLayout()
         CType(Me.cbxUsuario, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2806,12 +2806,14 @@ Public Class MntoOperario
             f.Add(New StringFilterItem("IDObra", 12677615))
             f.Add(New StringFilterItem("IDObra", 12677838))
             f.Add(New StringFilterItem("IDObra", 12678141))
+            f.Add(New StringFilterItem("IDObra", 12889960))
             f.Add(New StringFilterItem("IDObra", 50001))
             e.Filter.Add(f)
         ElseIf ExpertisApp.DataBaseName = "xSecozam50R2" Then
             Dim f As New Filter(FilterUnionOperator.Or)
             f.Add(New StringFilterItem("IDObra", 11854231))
             f.Add(New StringFilterItem("IDObra", 11854299))
+            f.Add(New StringFilterItem("IDObra", 11912241))
             e.Filter.Add(f)
         End If
     End Sub
