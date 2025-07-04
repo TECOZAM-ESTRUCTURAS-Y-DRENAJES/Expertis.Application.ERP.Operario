@@ -240,7 +240,6 @@ Public Class MntoOperario
         Me.lblPermisoGD = New Solmicro.Expertis.Engine.UI.Label
         Me.btnHistorico = New Solmicro.Expertis.Engine.UI.Button
         Me.txtTextoCondiciones = New Solmicro.Expertis.Engine.UI.TextBox
-        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.lblTextoCondiciones = New Solmicro.Expertis.Engine.UI.Label
         Me.txtTexto = New Solmicro.Expertis.Engine.UI.TextBox
         Me.Frame2 = New Solmicro.Expertis.Engine.UI.Frame
@@ -705,8 +704,6 @@ Public Class MntoOperario
         '
         'pnlFichaOperario
         '
-        Me.pnlFichaOperario.Controls.Add(Me.Frame3)
-        Me.pnlFichaOperario.Controls.Add(Me.GridHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.chbFirmaApp)
         Me.pnlFichaOperario.Controls.Add(Me.lblFirmaApp)
         Me.pnlFichaOperario.Controls.Add(Me.ntbJornadaParcial)
@@ -763,6 +760,7 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Controls.Add(Me.txtCurriculum)
         Me.pnlFichaOperario.Controls.Add(Me.lblUsuario)
         Me.pnlFichaOperario.Controls.Add(Me.cbxUsuario)
+        Me.pnlFichaOperario.Controls.Add(Me.Frame3)
         Me.pnlFichaOperario.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlFichaOperario.Location = New System.Drawing.Point(0, 0)
         Me.pnlFichaOperario.Name = "pnlFichaOperario"
@@ -799,12 +797,12 @@ Public Class MntoOperario
         Me.GridHistorico.EntityName = "OperarioHistorico"
         Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(328, 48)
+        Me.GridHistorico.Location = New System.Drawing.Point(468, 79)
         Me.GridHistorico.Name = "GridHistorico"
         Me.GridHistorico.PrimaryDataFields = "IDOperario"
         Me.GridHistorico.SecondaryDataFields = "IdOperario"
-        Me.GridHistorico.Size = New System.Drawing.Size(398, 116)
-        Me.GridHistorico.TabIndex = 138
+        Me.GridHistorico.Size = New System.Drawing.Size(453, 161)
+        Me.GridHistorico.TabIndex = 137
         Me.GridHistorico.ViewName = "tbOperarioHistorico"
         Me.GridHistorico.Visible = False
         '
@@ -909,24 +907,6 @@ Public Class MntoOperario
         Me.txtTextoCondiciones.Name = "txtTextoCondiciones"
         Me.txtTextoCondiciones.Size = New System.Drawing.Size(964, 62)
         Me.txtTextoCondiciones.TabIndex = 134
-        '
-        'GridHistorico
-        '
-        Me.GridHistorico.ColumnAutoResize = True
-        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
-        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
-        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
-        Me.GridHistorico.EntityName = "OperarioHistorico"
-        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(468, 79)
-        Me.GridHistorico.Name = "GridHistorico"
-        Me.GridHistorico.PrimaryDataFields = "IDOperario"
-        Me.GridHistorico.SecondaryDataFields = "IdOperario"
-        Me.GridHistorico.Size = New System.Drawing.Size(453, 161)
-        Me.GridHistorico.TabIndex = 137
-        Me.GridHistorico.ViewName = "tbOperarioHistorico"
-        Me.GridHistorico.Visible = False
         '
         'lblTextoCondiciones
         '
