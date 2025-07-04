@@ -158,7 +158,6 @@ Public Class MntoOperario
     Friend WithEvents btnHistorico As Solmicro.Expertis.Engine.UI.Button
     Friend WithEvents chbIncentivos As Solmicro.Expertis.Engine.UI.CheckBox
     Friend WithEvents lblIncentivos As Solmicro.Expertis.Engine.UI.Label
-    Friend WithEvents GridHistorico As Solmicro.Expertis.Engine.UI.Grid
     Friend WithEvents chbPermisoGD As Solmicro.Expertis.Engine.UI.CheckBox
     Friend WithEvents lblPermisoGD As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents cbxFechaNacimiento As Solmicro.Expertis.Engine.UI.CalendarBox
@@ -180,6 +179,9 @@ Public Class MntoOperario
     Friend WithEvents lblFirmaApp As Solmicro.Expertis.Engine.UI.Label
     Friend WithEvents clbFechaCaducidadPermiso As Solmicro.Expertis.Engine.UI.CalendarBox
     Friend WithEvents lblFechaCaducidadPermiso As Solmicro.Expertis.Engine.UI.Label
+    Friend WithEvents GridHistorico As Solmicro.Expertis.Engine.UI.Grid
+    Friend WithEvents Frame3 As Solmicro.Expertis.Engine.UI.Frame
+    Friend WithEvents ntbVacaciones As Solmicro.Expertis.Engine.UI.NumericTextBox
     Public WithEvents cbxFechaBaja As Solmicro.Expertis.Engine.UI.CalendarBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -223,6 +225,9 @@ Public Class MntoOperario
         Me.ntbC_H_N = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblC_H_N = New Solmicro.Expertis.Engine.UI.Label
         Me.pnlFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
+        Me.Frame3 = New Solmicro.Expertis.Engine.UI.Frame
+        Me.ntbVacaciones = New Solmicro.Expertis.Engine.UI.NumericTextBox
+        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.chbFirmaApp = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.lblFirmaApp = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
@@ -343,6 +348,7 @@ Public Class MntoOperario
         Me.PicFichaOperario.suspendlayout()
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFichaOperario.suspendlayout()
+        Me.Frame3.SuspendLayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
         Me.Frame1.SuspendLayout()
@@ -699,6 +705,8 @@ Public Class MntoOperario
         '
         'pnlFichaOperario
         '
+        Me.pnlFichaOperario.Controls.Add(Me.Frame3)
+        Me.pnlFichaOperario.Controls.Add(Me.GridHistorico)
         Me.pnlFichaOperario.Controls.Add(Me.chbFirmaApp)
         Me.pnlFichaOperario.Controls.Add(Me.lblFirmaApp)
         Me.pnlFichaOperario.Controls.Add(Me.ntbJornadaParcial)
@@ -760,6 +768,45 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Name = "pnlFichaOperario"
         Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 593)
         Me.pnlFichaOperario.TabIndex = 0
+        '
+        'Frame3
+        '
+        Me.Frame3.Controls.Add(Me.ntbVacaciones)
+        Me.Frame3.Location = New System.Drawing.Point(848, 170)
+        Me.Frame3.Name = "Frame3"
+        Me.Frame3.Size = New System.Drawing.Size(132, 42)
+        Me.Frame3.TabIndex = 150
+        Me.Frame3.TabStop = False
+        Me.Frame3.Text = "Vacaciones"
+        '
+        'ntbVacaciones
+        '
+        Me.TryDataBinding(ntbVacaciones, New System.Windows.Forms.Binding("Value", Me, "DiasVacaciones", True))
+        Me.ntbVacaciones.DisabledBackColor = System.Drawing.Color.White
+        Me.ntbVacaciones.Location = New System.Drawing.Point(24, 15)
+        Me.ntbVacaciones.Name = "ntbVacaciones"
+        Me.ntbVacaciones.NullBehavior = Janus.Windows.GridEX.NumericEditNullBehavior.AllowDBNull
+        Me.ntbVacaciones.Size = New System.Drawing.Size(100, 21)
+        Me.ntbVacaciones.TabIndex = 151
+        Me.ntbVacaciones.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int32
+        '
+        'GridHistorico
+        '
+        Me.GridHistorico.ColumnAutoResize = True
+        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
+        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
+        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
+        Me.GridHistorico.EntityName = "OperarioHistorico"
+        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridHistorico.KeyField = "IDOperario"
+        Me.GridHistorico.Location = New System.Drawing.Point(328, 48)
+        Me.GridHistorico.Name = "GridHistorico"
+        Me.GridHistorico.PrimaryDataFields = "IDOperario"
+        Me.GridHistorico.SecondaryDataFields = "IdOperario"
+        Me.GridHistorico.Size = New System.Drawing.Size(398, 116)
+        Me.GridHistorico.TabIndex = 138
+        Me.GridHistorico.ViewName = "tbOperarioHistorico"
+        Me.GridHistorico.Visible = False
         '
         'chbFirmaApp
         '
@@ -1873,6 +1920,8 @@ Public Class MntoOperario
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFichaOperario.ResumeLayout(False)
         Me.pnlFichaOperario.PerformLayout()
+        Me.Frame3.ResumeLayout(False)
+        Me.Frame3.PerformLayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame2.ResumeLayout(False)
         Me.Frame2.PerformLayout()
@@ -2574,7 +2623,23 @@ Public Class MntoOperario
             txtIDGET.Text = IDGET
         End If
 
+        If IsDBNull(ntbVacaciones.Value) Then
+            Dim fechaAlta As Date = cbxFechaAlta.Value
+            If Len(fechaAlta) > 0 Then
+                ntbVacaciones.Value = CalculaDiasVacaciones(fechaAlta)
+            End If
+        End If
+
     End Sub
+
+    Public Function CalculaDiasVacaciones(ByVal diaAlta As Date) As Integer
+        Dim finAnio As New Date(diaAlta.Year, 12, 31)
+        Dim diasTranscurridos As Integer = (finAnio - diaAlta).Days + 1
+
+        Dim diasVacaciones As Double = (diasTranscurridos * 22) / 365
+
+        Return CInt(Math.Round(diasVacaciones, MidpointRounding.AwayFromZero))
+    End Function
 
     Public Function GetIDGET() As String
         Dim f As New Filter
@@ -2688,7 +2753,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "Prevencion"))
                     f.Add(New StringFilterItem("IDOficio", "RRHH"))
                 End If
-            End If         
+            End If
             e.Filter.Add(f)
         ElseIf ExpertisApp.DataBaseName = "xFerrallas50R2" Then
             Dim f As New Engine.Filter(FilterUnionOperator.Or)
@@ -2814,20 +2879,6 @@ Public Class MntoOperario
             f.Add(New StringFilterItem("IDObra", 11854231))
             f.Add(New StringFilterItem("IDObra", 11854299))
             f.Add(New StringFilterItem("IDObra", 11912241))
-            e.Filter.Add(f)
-        End If
-    End Sub
-
-    Private Sub AdvIDDepartamento_SetPredefinedFilter(ByVal sender As System.Object, ByVal e As Solmicro.Expertis.Engine.UI.AdvSearchFilterEventArgs) Handles AdvIDDepartamento.SetPredefinedFilter
-        If ExpertisApp.DataBaseName = "xTecozam50R2" Then
-            Dim f As New Filter(FilterUnionOperator.Or)
-            f.Add(New StringFilterItem("IDDepartamento", "01"))
-            f.Add(New StringFilterItem("IDDepartamento", "02"))
-            f.Add(New StringFilterItem("IDDepartamento", "06"))
-            f.Add(New StringFilterItem("IDDepartamento", "32"))
-            f.Add(New StringFilterItem("IDDepartamento", "20"))
-            f.Add(New StringFilterItem("IDDepartamento", "26"))
-            f.Add(New StringFilterItem("IDDepartamento", "33"))
             e.Filter.Add(f)
         End If
     End Sub
