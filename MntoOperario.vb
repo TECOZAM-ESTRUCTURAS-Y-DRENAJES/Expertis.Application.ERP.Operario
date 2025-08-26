@@ -225,9 +225,6 @@ Public Class MntoOperario
         Me.ntbC_H_N = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.lblC_H_N = New Solmicro.Expertis.Engine.UI.Label
         Me.pnlFichaOperario = New Solmicro.Expertis.Engine.UI.Panel
-        Me.Frame3 = New Solmicro.Expertis.Engine.UI.Frame
-        Me.ntbVacaciones = New Solmicro.Expertis.Engine.UI.NumericTextBox
-        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.chbFirmaApp = New Solmicro.Expertis.Engine.UI.CheckBox
         Me.lblFirmaApp = New Solmicro.Expertis.Engine.UI.Label
         Me.ntbJornadaParcial = New Solmicro.Expertis.Engine.UI.NumericTextBox
@@ -240,6 +237,7 @@ Public Class MntoOperario
         Me.lblPermisoGD = New Solmicro.Expertis.Engine.UI.Label
         Me.btnHistorico = New Solmicro.Expertis.Engine.UI.Button
         Me.txtTextoCondiciones = New Solmicro.Expertis.Engine.UI.TextBox
+        Me.GridHistorico = New Solmicro.Expertis.Engine.UI.Grid
         Me.lblTextoCondiciones = New Solmicro.Expertis.Engine.UI.Label
         Me.txtTexto = New Solmicro.Expertis.Engine.UI.TextBox
         Me.Frame2 = New Solmicro.Expertis.Engine.UI.Frame
@@ -339,6 +337,8 @@ Public Class MntoOperario
         Me.txtCurriculum = New Solmicro.Expertis.Engine.UI.TextBox
         Me.lblUsuario = New Solmicro.Expertis.Engine.UI.Label
         Me.cbxUsuario = New Solmicro.Expertis.Engine.UI.ComboBox
+        Me.Frame3 = New Solmicro.Expertis.Engine.UI.Frame
+        Me.ntbVacaciones = New Solmicro.Expertis.Engine.UI.NumericTextBox
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         CType(Me.ToolBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MenuBar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -347,7 +347,6 @@ Public Class MntoOperario
         Me.PicFichaOperario.suspendlayout()
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFichaOperario.suspendlayout()
-        Me.Frame3.SuspendLayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame2.SuspendLayout()
         Me.Frame1.SuspendLayout()
@@ -355,6 +354,7 @@ Public Class MntoOperario
         Me.FraDatosContacto.SuspendLayout()
         Me.FraCondEco.SuspendLayout()
         CType(Me.cbxUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Frame3.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolBar
@@ -767,45 +767,6 @@ Public Class MntoOperario
         Me.pnlFichaOperario.Size = New System.Drawing.Size(991, 593)
         Me.pnlFichaOperario.TabIndex = 0
         '
-        'Frame3
-        '
-        Me.Frame3.Controls.Add(Me.ntbVacaciones)
-        Me.Frame3.Location = New System.Drawing.Point(848, 170)
-        Me.Frame3.Name = "Frame3"
-        Me.Frame3.Size = New System.Drawing.Size(132, 42)
-        Me.Frame3.TabIndex = 150
-        Me.Frame3.TabStop = False
-        Me.Frame3.Text = "Vacaciones"
-        '
-        'ntbVacaciones
-        '
-        Me.TryDataBinding(ntbVacaciones, New System.Windows.Forms.Binding("Value", Me, "DiasVacaciones", True))
-        Me.ntbVacaciones.DisabledBackColor = System.Drawing.Color.White
-        Me.ntbVacaciones.Location = New System.Drawing.Point(24, 15)
-        Me.ntbVacaciones.Name = "ntbVacaciones"
-        Me.ntbVacaciones.NullBehavior = Janus.Windows.GridEX.NumericEditNullBehavior.AllowDBNull
-        Me.ntbVacaciones.Size = New System.Drawing.Size(100, 21)
-        Me.ntbVacaciones.TabIndex = 151
-        Me.ntbVacaciones.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int32
-        '
-        'GridHistorico
-        '
-        Me.GridHistorico.ColumnAutoResize = True
-        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
-        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
-        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
-        Me.GridHistorico.EntityName = "OperarioHistorico"
-        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridHistorico.KeyField = "IDOperario"
-        Me.GridHistorico.Location = New System.Drawing.Point(468, 79)
-        Me.GridHistorico.Name = "GridHistorico"
-        Me.GridHistorico.PrimaryDataFields = "IDOperario"
-        Me.GridHistorico.SecondaryDataFields = "IdOperario"
-        Me.GridHistorico.Size = New System.Drawing.Size(453, 161)
-        Me.GridHistorico.TabIndex = 137
-        Me.GridHistorico.ViewName = "tbOperarioHistorico"
-        Me.GridHistorico.Visible = False
-        '
         'chbFirmaApp
         '
         Me.TryDataBinding(chbFirmaApp, New System.Windows.Forms.Binding("BindableValue", Me, "FirmaApp", True))
@@ -907,6 +868,24 @@ Public Class MntoOperario
         Me.txtTextoCondiciones.Name = "txtTextoCondiciones"
         Me.txtTextoCondiciones.Size = New System.Drawing.Size(964, 62)
         Me.txtTextoCondiciones.TabIndex = 134
+        '
+        'GridHistorico
+        '
+        Me.GridHistorico.ColumnAutoResize = True
+        GridHistorico_DesignTimeLayout.LayoutString = resources.GetString("GridHistorico_DesignTimeLayout.LayoutString")
+        Me.GridHistorico.DesignTimeLayout = GridHistorico_DesignTimeLayout
+        Me.GridHistorico.EnterKeyBehavior = Janus.Windows.GridEX.EnterKeyBehavior.NextCell
+        Me.GridHistorico.EntityName = "OperarioHistorico"
+        Me.GridHistorico.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridHistorico.KeyField = "IDOperario"
+        Me.GridHistorico.Location = New System.Drawing.Point(477, 57)
+        Me.GridHistorico.Name = "GridHistorico"
+        Me.GridHistorico.PrimaryDataFields = "IDOperario"
+        Me.GridHistorico.SecondaryDataFields = "IdOperario"
+        Me.GridHistorico.Size = New System.Drawing.Size(453, 161)
+        Me.GridHistorico.TabIndex = 137
+        Me.GridHistorico.ViewName = "tbOperarioHistorico"
+        Me.GridHistorico.Visible = False
         '
         'lblTextoCondiciones
         '
@@ -1882,6 +1861,27 @@ Public Class MntoOperario
         Me.cbxUsuario.TabIndex = 14
         Me.cbxUsuario.ValueMember = "IDUsuario"
         '
+        'Frame3
+        '
+        Me.Frame3.Controls.Add(Me.ntbVacaciones)
+        Me.Frame3.Location = New System.Drawing.Point(848, 170)
+        Me.Frame3.Name = "Frame3"
+        Me.Frame3.Size = New System.Drawing.Size(132, 42)
+        Me.Frame3.TabIndex = 150
+        Me.Frame3.TabStop = False
+        Me.Frame3.Text = "Vacaciones"
+        '
+        'ntbVacaciones
+        '
+        Me.TryDataBinding(ntbVacaciones, New System.Windows.Forms.Binding("Value", Me, "DiasVacaciones", True))
+        Me.ntbVacaciones.DisabledBackColor = System.Drawing.Color.White
+        Me.ntbVacaciones.Location = New System.Drawing.Point(24, 15)
+        Me.ntbVacaciones.Name = "ntbVacaciones"
+        Me.ntbVacaciones.NullBehavior = Janus.Windows.GridEX.NumericEditNullBehavior.AllowDBNull
+        Me.ntbVacaciones.Size = New System.Drawing.Size(100, 21)
+        Me.ntbVacaciones.TabIndex = 151
+        Me.ntbVacaciones.ValueType = Janus.Windows.GridEX.NumericEditValueType.Int32
+        '
         'MntoOperario
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(6, 14)
@@ -1900,8 +1900,6 @@ Public Class MntoOperario
         CType(Me.GridHistoricoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFichaOperario.ResumeLayout(False)
         Me.pnlFichaOperario.PerformLayout()
-        Me.Frame3.ResumeLayout(False)
-        Me.Frame3.PerformLayout()
         CType(Me.GridHistorico, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame2.ResumeLayout(False)
         Me.Frame2.PerformLayout()
@@ -1913,6 +1911,8 @@ Public Class MntoOperario
         Me.FraCondEco.ResumeLayout(False)
         Me.FraCondEco.PerformLayout()
         CType(Me.cbxUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Frame3.ResumeLayout(False)
+        Me.Frame3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2748,6 +2748,7 @@ Public Class MntoOperario
                     f.Add(New StringFilterItem("IDOficio", "GRUISTA"))
                 ElseIf AdvIDCategoria.Text = 4 Then
                 ElseIf AdvIDCategoria.Text = 5 Then
+                    f.Add(New StringFilterItem("IDOficio", "ADMIN"))
                     f.Add(New StringFilterItem("IDOficio", "COND"))
                     f.Add(New StringFilterItem("IDOficio", "JEFETALLER"))
                     f.Add(New StringFilterItem("IDOficio", "INFORMATIC"))
